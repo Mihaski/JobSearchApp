@@ -1,8 +1,43 @@
 <resources>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_name">JobSearchApp</string>
     <string name="title_search">Поиск</string>
     <string name="title_favorites">Избранное</string>
     <string name="title_messages">Сообщения</string>
     <string name="title_profile">Профиль</string>
     <string name="title_responses">Отклики</string>
+    <string name="title_enter_lk">Вход в личный кабинет</string>
+    <string name="title_work_search">Поиск работы</string>
+    <string name="button_continue">Продолжить</string>
+    <string name="text_EditText">Электронная почта или телефон</string>
+    <string name="envelope_image">Хард-Картинка</string>
+    <string name="title_worker_search">Поиск сотрудников</string>
+    <string name="title_set_access_db">Размещение вакансий и доступ к базе резюме</string>
+    <string name="button_worker_search">Я ищу сотрудников</string>
+    <string name="button_sign_in_with_pass">Войти с паролем</string>
+    <string name="button_confirm">Подтвердить</string>
+    <string name="tv_code_over_email">Отправили код на example@mail.ru</string>
+    <string name="tv_enter_code_please">Напишите его, чтобы подтвердить, что это\nвы,
+        а не кто-то другой входит в личный\nкабинет</string>
+    <string name="tv_edt_key_word">Должность, ключевые слова</string>
+    <string name="tv_offers_for_you">Вакансии для вас</string>
+    <string name="tv_looking_for">Сейчас просматривает 1 человек</string>
+    <string name="tv_name_staff">UI/UX Designer</string>
+    <string name="tv_city">Минск</string>
+    <string name="tv_name_company">Мобирикс</string>
+    <string name="tv_experience">Опыт от 1 года до 3 лет</string>
+    <string name="tv_date_of_public">Опубликовано 20 февраля</string>
+    <string name="button_calls">Откликнуться</string>
+    <string name="button_favorites">Избранные вакансии</string>
+    <string name="image_approved">иконка проверенности компании. Хардкод, есть у каждой компании</string>
+    <string name="image_filter">кнопка фильтра</string>
+    <string name="image_offer">иконка верхнего списка</string>
+    <string name="tv_offer">Вакансии рядом с вами</string>
+    <string name="tv_up_cv">поднять</string>
+    <string name="butt_show_vacancy">Ещё Х вакансий_и_я</string>
+
+
+
 </resources>

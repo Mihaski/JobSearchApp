@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/job_app_nav"
+    app:startDestination="@id/fragmentLkEnter">
+    <fragment
+        android:id="@+id/fragmentLkEnter"
+        android:name="com.example.jobsearchapp.FragmentLkEnter"
+        android:label="fragment_enter_lk"
+        tools:layout="@layout/fragment_lk_enter" >
+        <action
+            android:id="@+id/action_fragmentLkEnter_to_fragment_approved"
+            app:destination="@id/fragment_approved" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_approved"
+        android:name="com.example.jobsearchapp.Fragment_approved"
+        android:label="fragment_approved"
+        tools:layout="@layout/fragment_approved" />
+</navigation>

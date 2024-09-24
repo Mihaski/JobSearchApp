@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Fragment_approved">
+
+    <TextView
+        style="@style/style_sf_pro_bold_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/tv_code_over_email"
+        android:textSize="20sp" />
+
+    <TextView
+        style="@style/style_sf_pro_bold_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/tv_enter_code_please"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/cardview_dark_background"
+            app:cardCornerRadius="6dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/cardview_dark_background"
+            app:cardCornerRadius="6dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/cardview_dark_background"
+            app:cardCornerRadius="6dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/cardview_dark_background"
+            app:cardCornerRadius="6dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/apply"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/dark_blue"
+        android:text="@string/button_confirm"
+        android:textColor="@color/inactive_text_color"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>
