@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="15dp"
     android:backgroundTint="@color/cardview_dark_background"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="8dp"
+    android:layout_marginEnd="5dp">
 
     <LinearLayout
         android:layout_width="132dp"
@@ -24,12 +24,13 @@
             android:src="@drawable/icon_paper_ok" />
 
         <TextView
+            android:id="@+id/tv_offers_title"
             style="@style/style_sf_pro_bold_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:textSize="14sp"
-            tools:text="@string/tv_offer" />
+            tools:text="@string/tv_horizontal_card" />
 
         <TextView
             android:layout_width="wrap_content"

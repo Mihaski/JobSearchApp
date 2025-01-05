@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="15dp"
+    android:layout_marginEnd="5dp"
     android:backgroundTint="@color/cardview_dark_background"
     app:cardCornerRadius="8dp">
 
@@ -18,23 +18,24 @@
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/green_star"
             android:layout_marginTop="10dp"
             android:background="@drawable/circle_background_green"
-            android:contentDescription="@string/image_offer" />
+            android:contentDescription="@string/image_offer"
+            android:src="@drawable/green_star" />
 
         <TextView
+            android:id="@+id/tv_offers_title"
             style="@style/style_sf_pro_bold_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:textSize="14sp"
-            tools:text="@string/tv_offer" />
+            tools:text="@string/tv_horizontal_card" />
 
         <TextView
-            android:textColor="@color/green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/green"
             android:textSize="14sp"
             tools:text="@string/tv_up_cv" />
     </LinearLayout>

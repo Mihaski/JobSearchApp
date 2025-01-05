@@ -15,7 +15,16 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_approved"
-        android:name="com.example.jobsearchapp.Fragment_approved"
+        android:name="com.example.jobsearchapp.FragmentApproved"
         android:label="fragment_approved"
-        tools:layout="@layout/fragment_approved" />
+        tools:layout="@layout/fragment_approved" >
+        <action
+            android:id="@+id/action_fragment_approved_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.jobsearchapp.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

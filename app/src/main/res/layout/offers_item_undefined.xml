@@ -15,13 +15,6 @@
         android:paddingStart="8dp"
         android:paddingEnd="15dp">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/circle_background_blue"
-            android:contentDescription="@string/image_offer" />
-
         <TextView
             android:id="@+id/tv_offers_title"
             style="@style/style_sf_pro_bold_white"

@@ -7,7 +7,7 @@
     android:background="@color/black"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".Fragment_approved">
+    tools:context=".FragmentApproved">
 
     <TextView
         style="@style/style_sf_pro_bold_white"
@@ -80,7 +80,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/apply"
+        android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="15dp"

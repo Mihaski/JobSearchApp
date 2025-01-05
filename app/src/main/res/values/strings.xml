@@ -23,6 +23,7 @@
         а не кто-то другой входит в личный\nкабинет</string>
     <string name="tv_edt_key_word">Должность, ключевые слова</string>
     <string name="tv_offers_for_you">Вакансии для вас</string>
+    <string name="tv_verticals_card">Текст в Вертикальном списке карточек</string>
     <string name="tv_looking_for">Сейчас просматривает 1 человек</string>
     <string name="tv_name_staff">UI/UX Designer</string>
     <string name="tv_city">Минск</string>
@@ -34,10 +35,9 @@
     <string name="image_approved">иконка проверенности компании. Хардкод, есть у каждой компании</string>
     <string name="image_filter">кнопка фильтра</string>
     <string name="image_offer">иконка верхнего списка</string>
-    <string name="tv_offer">Вакансии рядом с вами</string>
+    <string name="tv_horizontal_card">Текст в горизонтальном списке карточек</string>
     <string name="tv_up_cv">поднять</string>
     <string name="butt_show_vacancy">Ещё Х вакансий_и_я</string>
-
 
 
 </resources>

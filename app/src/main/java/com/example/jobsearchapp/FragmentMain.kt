@@ -1,10 +1,16 @@
 package com.example.jobsearchapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.data.withouthttp.listOfOffers
+import com.example.data.withouthttp.listOfVacancies
+import com.example.jobsearchapp.MainScreenDelegates.offersHorizontalListDelegate
+import com.example.jobsearchapp.MainScreenDelegates.vacanciesVerticalListDelegate
+import com.example.jobsearchapp.databinding.FragmentMainBinding
+import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,11 +27,39 @@ class FragmentMain : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    //private lateinit var vacanciesListAdapter: VacanciesListAdapter
+    private val binding by viewBinding(FragmentMainBinding::bind) //!! IMPORTANT only onViewCreated
+
+    private val mainScreenVerticalAdapter = ListDelegationAdapter(
+        vacanciesVerticalListDelegate
+    )
+    private val mainScreenHorizontalAdapter = ListDelegationAdapter(
+        offersHorizontalListDelegate
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //val scrollListVacancies = view.findViewById<RecyclerView>(R.id.rv_container_main_fragment)// delete on clearance project
+        //vacanciesListAdapter = VacanciesListAdapter()
+        binding.rvVerticalContainerMainFragment.adapter = mainScreenVerticalAdapter
+        binding.rvHorizontalContainerMainFragment.adapter = mainScreenHorizontalAdapter
+        //vacanciesListAdapter.submitList(listOfVacancies)
+        mainScreenVerticalAdapter.apply {
+            items = listOfVacancies
+            notifyDataSetChanged()
+        }
+        mainScreenHorizontalAdapter.apply {
+            items = listOfOffers
+            notifyDataSetChanged()
         }
     }
 
