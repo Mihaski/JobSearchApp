@@ -29,7 +29,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/job_app_nav"
-        tools:context=".MainActivity"
         tools:layout="@layout/fragment_lk_enter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

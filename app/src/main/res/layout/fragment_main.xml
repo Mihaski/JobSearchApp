@@ -74,7 +74,7 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/offers_item_near_vacancies" />
+        tools:listitem="@layout/offers_item" />
 
     <TextView
         style="@style/style_sf_pro_bold_white"
@@ -95,7 +95,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/butt_show_all_vacancies"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/vacancies_item" />
+            tools:listitem="@layout/vacancies_item"/>
 
         <Button
             android:id="@+id/butt_show_all_vacancies"

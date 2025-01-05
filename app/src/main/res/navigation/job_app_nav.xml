@@ -27,4 +27,8 @@
         android:name="com.example.jobsearchapp.FragmentMain"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/fragmentTest"
+        android:name="com.example.jobsearchapp.FragmentTest"
+        android:label="FragmentTest" />
 </navigation>

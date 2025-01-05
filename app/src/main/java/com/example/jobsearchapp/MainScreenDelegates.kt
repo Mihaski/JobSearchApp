@@ -1,14 +1,13 @@
 package com.example.jobsearchapp
 
-import com.example.data.ListMainScreenHorizontalItem
-import com.example.data.ListMainScreenVerticalItem
+import androidx.core.view.isVisible
+import com.example.data.HorizontalBaseClass
 import com.example.data.Offers
 import com.example.data.Vacancies
-import com.example.data.withouthttp.listOfOffers
-import com.example.data.withouthttp.listOfVacancies
-import com.example.jobsearchapp.databinding.OffersItemLevelUpResumeBinding
-import com.example.jobsearchapp.databinding.OffersItemNearVacanciesBinding
-import com.example.jobsearchapp.databinding.OffersItemTemporaryJobBinding
+import com.example.data.VerticalBaseClass
+import com.example.data.withouthttp.ListOfOfferses
+import com.example.data.withouthttp.ListOfVacancis
+import com.example.jobsearchapp.databinding.OffersItemBinding
 import com.example.jobsearchapp.databinding.OffersItemsListBinding
 import com.example.jobsearchapp.databinding.VacanciesItemBinding
 import com.example.jobsearchapp.databinding.VacanciesItemsListBinding
@@ -17,25 +16,25 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 object MainScreenDelegates {
 
-    val vacanciesVerticalListDelegate =
-        adapterDelegateViewBinding<Vacancies, ListMainScreenVerticalItem, VacanciesItemsListBinding>(
+    val verticalDelegate =
+        adapterDelegateViewBinding<ListOfVacancis, VerticalBaseClass, VacanciesItemsListBinding>(
             { inflater, container ->
                 VacanciesItemsListBinding.inflate(inflater, container, false).apply {
-                    rvVerticalContainerMainFragment.adapter = vacanciesListAdapter
+                    rvVerticalContainerItemsList.adapter = ListDelegationAdapter(vacanciesDelegate)
                 }
             }
         ) {
             bind {
-                (binding.rvVerticalContainerMainFragment.adapter as ListDelegationAdapter<List<ListMainScreenVerticalItem>>)
+                (binding.rvVerticalContainerItemsList.adapter as ListDelegationAdapter<List<VerticalBaseClass>>)
                     .apply {
-                        items = listOfVacancies
+                        items = item.listVacanci
                         notifyDataSetChanged()
                     }
             }
         }
 
     private val vacanciesDelegate =
-        adapterDelegateViewBinding<Vacancies, ListMainScreenVerticalItem, VacanciesItemBinding>(
+        adapterDelegateViewBinding<Vacancies, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
                 VacanciesItemBinding.inflate(
                     inflater,
@@ -45,81 +44,68 @@ object MainScreenDelegates {
             }
         ) {
             bind {
-                binding.jobTitle.text = item.title
-                binding.countCurrentlyViewing.text = "Cdsfasdf ${item.lookingNumber} xtkjdtr"
-                binding.city.text = item.town
-                binding.salary.text = item.salaryShort
-                binding.experience.text = item.previewExperienceText
-                binding.companyName.text = item.company
-                binding.dateOfPublication.text = item.publishedDate
+                with(binding) {
+                    jobTitle.text = item.title
+                    countCurrentlyViewing.text = "Cdsfasdf ${item.lookingNumber} xtkjdtr"
+                    city.text = item.town
+                    salary.text = item.salaryShort
+                    experience.text = item.previewExperienceText
+                    companyName.text = item.company
+                    dateOfPublication.text = item.publishedDate
+                }
             }
         }
 
-    private val vacanciesListAdapter = ListDelegationAdapter(
-        vacanciesDelegate
-    )
-
-    val offersHorizontalListDelegate =
-        adapterDelegateViewBinding<Offers, ListMainScreenHorizontalItem, OffersItemsListBinding>(
+    val horizontalDelegate =
+        adapterDelegateViewBinding<ListOfOfferses, HorizontalBaseClass, OffersItemsListBinding>(
             { inflater, container ->
                 OffersItemsListBinding.inflate(inflater, container, false).apply {
-                    rvHorizontalContainerMainFragment.adapter = offersAdapter
+                    rvHorizontalContainerItemsList.adapter = ListDelegationAdapter(offersDelegate)
                 }
             }
         ) {
-            (binding.rvHorizontalContainerMainFragment.adapter as ListDelegationAdapter<List<ListMainScreenHorizontalItem>>)
-                .apply {
-                    items = listOfOffers
-                    notifyDataSetChanged()
+            bind {
+                (binding.rvHorizontalContainerItemsList.adapter as ListDelegationAdapter<List<HorizontalBaseClass>>)
+                    .apply {
+                        items = item.listOffers
+                        notifyDataSetChanged()
+                    }
+            }
+        }
+
+    private val offersDelegate =
+        adapterDelegateViewBinding<Offers, HorizontalBaseClass, OffersItemBinding>(
+            { inflater, container ->
+                OffersItemBinding.inflate(
+                    inflater,
+                    container,
+                    false
+                )
+            }
+        ) {
+            bind {
+                when (item.id) {
+                    "near_vacancies" -> {}
+                    "level_up_resume" -> {
+                        with(binding) {
+                            ivOffers.setImageResource(R.drawable.green_star)
+                            ivOffers.setBackgroundColor(getColor(R.color.dark_green))
+                        }
+                    }
+
+                    "temporary_job" -> {
+                        with(binding) {
+                            ivOffers.setImageResource(R.drawable.icon_paper_ok)
+                            ivOffers.setBackgroundColor(getColor(R.color.dark_green))
+                        }
+                    }
+
+                    else -> {
+                        binding.ivOffers.isVisible = false
+                    }
                 }
-        }
-
-    private val offersNearDelegate =
-        adapterDelegateViewBinding<Offers, ListMainScreenHorizontalItem, OffersItemNearVacanciesBinding>(
-            { inflater, container ->
-                OffersItemNearVacanciesBinding.inflate(
-                    inflater,
-                    container,
-                    false
-                )
-            }
-        ) {
-            bind {
+                if (item.button == "") binding.tvUpCurriculumVitae.isVisible = false
                 binding.tvOffersTitle.text = item.title
             }
         }
-
-    private val offersLevelDelegate =
-        adapterDelegateViewBinding<Offers, ListMainScreenHorizontalItem, OffersItemLevelUpResumeBinding>(
-            { inflater, container ->
-                OffersItemLevelUpResumeBinding.inflate(
-                    inflater,
-                    container,
-                    false
-                )
-            }
-        ) {
-            bind {
-                binding.tvOffersTitle.text = item.title
-            }
-        }
-
-    private val offersTemporaryDelegate =
-        adapterDelegateViewBinding<Offers, ListMainScreenHorizontalItem, OffersItemTemporaryJobBinding>(
-            { inflater, container ->
-                OffersItemTemporaryJobBinding.inflate(
-                    inflater,
-                    container,
-                    false
-                )
-            }
-        ) {
-            bind {
-                binding.tvOffersTitle.text = item.title
-            }
-        }
-
-    private val offersAdapter = ListDelegationAdapter(
-        offersTemporaryDelegate, offersLevelDelegate, offersNearDelegate
-    )
 }

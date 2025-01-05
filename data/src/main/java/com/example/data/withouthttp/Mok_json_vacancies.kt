@@ -2,7 +2,7 @@ package com.example.data.withouthttp
 
 import com.example.data.Vacancies
 
-val listOfVacancies= arrayListOf(
+val listOfVacancies= listOf(
     Vacancies(
         "cbf0c984-7c6c-4ada-82da-e29dc698bb50",
         "2",

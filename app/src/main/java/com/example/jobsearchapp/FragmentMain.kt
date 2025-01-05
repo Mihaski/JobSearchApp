@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.data.Vacancies
+import com.example.data.withouthttp.ListOfOfferses
+import com.example.data.withouthttp.ListOfVacancis
 import com.example.data.withouthttp.listOfOffers
-import com.example.data.withouthttp.listOfVacancies
-import com.example.jobsearchapp.MainScreenDelegates.offersHorizontalListDelegate
-import com.example.jobsearchapp.MainScreenDelegates.vacanciesVerticalListDelegate
+import com.example.jobsearchapp.MainScreenDelegates.horizontalDelegate
+import com.example.jobsearchapp.MainScreenDelegates.verticalDelegate
 import com.example.jobsearchapp.databinding.FragmentMainBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
@@ -27,14 +29,13 @@ class FragmentMain : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    //private lateinit var vacanciesListAdapter: VacanciesListAdapter
     private val binding by viewBinding(FragmentMainBinding::bind) //!! IMPORTANT only onViewCreated
 
-    private val mainScreenVerticalAdapter = ListDelegationAdapter(
-        vacanciesVerticalListDelegate
+    private val verticalAdapter = ListDelegationAdapter(
+        verticalDelegate
     )
-    private val mainScreenHorizontalAdapter = ListDelegationAdapter(
-        offersHorizontalListDelegate
+    private val horizontalAdapter = ListDelegationAdapter(
+        horizontalDelegate
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,22 +44,25 @@ class FragmentMain : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val scrollListVacancies = view.findViewById<RecyclerView>(R.id.rv_container_main_fragment)// delete on clearance project
-        //vacanciesListAdapter = VacanciesListAdapter()
-        binding.rvVerticalContainerMainFragment.adapter = mainScreenVerticalAdapter
-        binding.rvHorizontalContainerMainFragment.adapter = mainScreenHorizontalAdapter
-        //vacanciesListAdapter.submitList(listOfVacancies)
-        mainScreenVerticalAdapter.apply {
-            items = listOfVacancies
+        binding.rvVerticalContainerMainFragment.adapter = verticalAdapter
+        verticalAdapter.apply {
+            items = listOf(ListOfVacancis(
+                IntRange(1, 20).map {
+                    Vacancies(
+                        title = it.toString()
+                    )
+                }
+            ))
             notifyDataSetChanged()
         }
-        mainScreenHorizontalAdapter.apply {
-            items = listOfOffers
+
+        binding.rvHorizontalContainerMainFragment.adapter = horizontalAdapter
+        horizontalAdapter.apply {
+            items = listOf(ListOfOfferses(listOfOffers))
             notifyDataSetChanged()
         }
     }

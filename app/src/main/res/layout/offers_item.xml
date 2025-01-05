@@ -16,6 +16,7 @@
         android:paddingEnd="15dp">
 
         <ImageView
+            android:id="@+id/iv_offers"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="10dp"
@@ -32,10 +33,11 @@
             tools:text="@string/tv_horizontal_card" />
 
         <TextView
+            android:id="@+id/tv_up_curriculum_vitae"
             android:textColor="@color/green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            tools:text="@string/tv_up_cv" />
+            android:text="@string/tv_up_cv" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -5,4 +5,4 @@ data class Offers(
     var title: String = "",
     var button: String = "",
     var link: String = ""
-): ListMainScreenHorizontalItem
+): HorizontalBaseClass

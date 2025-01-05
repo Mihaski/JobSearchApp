@@ -2,7 +2,7 @@ package com.example.data.withouthttp
 
 import com.example.data.Offers
 
-val listOfOffers:List<Offers> = arrayListOf(
+val listOfOffers = listOf(
     Offers(
         "near_vacancies",
         "Вакансии рядом с вами",
