@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_fragment_approved_to_fragmentMain"
             app:destination="@id/fragmentMain" />
+        <action
+            android:id="@+id/action_fragment_approved_to_fragmentTest"
+            app:destination="@id/fragmentTest" />
     </fragment>
     <fragment
         android:id="@+id/fragmentMain"

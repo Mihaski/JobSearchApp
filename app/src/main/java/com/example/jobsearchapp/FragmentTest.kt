@@ -16,26 +16,26 @@ class FragmentTest:Fragment() {
 
     private val binding by viewBinding(FragmentTestBinding::bind) //!! IMPORTANT only onViewCreated
 
-    private val verticalAdapter = ListDelegationAdapter(
-        verticalDelegate
-    )
-    private val horizontalAdapter = ListDelegationAdapter(
-        horizontalDelegate
-    )
+//    private val verticalAdapter = ListDelegationAdapter(
+//        verticalDelegate
+//    )
+//    private val horizontalAdapter = ListDelegationAdapter(
+//        horizontalDelegate
+//    )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvTestContainer.adapter = verticalAdapter
-        verticalAdapter.apply {
-            items = listOf(ListOfVacancis(
-                IntRange(1, 20).map {
-                    Vacancies(
-                        title = it.toString()
-                    )
-                }
-            ))
-            notifyDataSetChanged()
-        }
+//        binding.rvTestContainer.adapter = verticalAdapter
+//        verticalAdapter.apply {
+//            items = listOf(ListOfVacancis(
+//                IntRange(1, 20).map {
+//                    Vacancies(
+//                        title = it.toString()
+//                    )
+//                }
+//            ))
+//            notifyDataSetChanged()
+//        }
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
