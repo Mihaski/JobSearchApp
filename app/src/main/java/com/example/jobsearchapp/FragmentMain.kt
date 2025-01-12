@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.data.Vacancies
+import androidx.navigation.fragment.findNavController
 import com.example.data.withouthttp.ListOfOfferses
 import com.example.data.withouthttp.ListOfVacancis
 import com.example.data.withouthttp.listOfOffers
+import com.example.data.withouthttp.listOfVacancies
 import com.example.jobsearchapp.MainScreenDelegates.horizontalDelegate
+import com.example.jobsearchapp.MainScreenDelegates.vacanciesDelegate
 import com.example.jobsearchapp.MainScreenDelegates.verticalDelegate
 import com.example.jobsearchapp.databinding.FragmentMainBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -25,6 +27,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentMain : Fragment() {
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -33,6 +36,10 @@ class FragmentMain : Fragment() {
 
     private val verticalAdapter = ListDelegationAdapter(
         verticalDelegate
+//        {
+//            val args = Bundle().apply { putString(param1, it.id) }
+//            findNavController().navigate(R.id.action_fragmentMain_to_fragmentVacancie, args)
+//        }
     )
     private val horizontalAdapter = ListDelegationAdapter(
         horizontalDelegate
@@ -48,19 +55,13 @@ class FragmentMain : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvVerticalContainerMainFragment.adapter = verticalAdapter
+        binding.rvVerticalContainerMainFragmentMainScreen.adapter = verticalAdapter
         verticalAdapter.apply {
-            items = listOf(ListOfVacancis(
-                IntRange(1, 20).map {
-                    Vacancies(
-                        title = it.toString()
-                    )
-                }
-            ))
+            items = listOf(ListOfVacancis(listOfVacancies))
             notifyDataSetChanged()
         }
 
-        binding.rvHorizontalContainerMainFragment.adapter = horizontalAdapter
+        binding.rvHorizontalContainerMainFragmentMainScreen.adapter = horizontalAdapter
         horizontalAdapter.apply {
             items = listOf(ListOfOfferses(listOfOffers))
             notifyDataSetChanged()

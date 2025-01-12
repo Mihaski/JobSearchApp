@@ -8,7 +8,7 @@
         android:id="@+id/fragmentLkEnter"
         android:name="com.example.jobsearchapp.FragmentLkEnter"
         android:label="fragment_enter_lk"
-        tools:layout="@layout/fragment_lk_enter" >
+        tools:layout="@layout/fragment_lk_enter">
         <action
             android:id="@+id/action_fragmentLkEnter_to_fragment_approved"
             app:destination="@id/fragment_approved" />
@@ -17,7 +17,7 @@
         android:id="@+id/fragment_approved"
         android:name="com.example.jobsearchapp.FragmentApproved"
         android:label="fragment_approved"
-        tools:layout="@layout/fragment_approved" >
+        tools:layout="@layout/fragment_approved">
         <action
             android:id="@+id/action_fragment_approved_to_fragmentMain"
             app:destination="@id/fragmentMain" />
@@ -29,9 +29,22 @@
         android:id="@+id/fragmentMain"
         android:name="com.example.jobsearchapp.FragmentMain"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentVacancie"
+            app:destination="@id/fragmentVacancie" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentTest"
         android:name="com.example.jobsearchapp.FragmentTest"
         android:label="FragmentTest" />
+    <fragment
+        android:id="@+id/fragmentVacancie"
+        android:name="com.example.jobsearchapp.FragmentVacancie"
+        android:label="fragment_vacancie"
+        tools:layout="@layout/fragment_vacancie">
+        <argument
+            android:name="Vacancies"
+            app:argType="com.example.data.Vacancies" />
+    </fragment>
 </navigation>

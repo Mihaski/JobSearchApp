@@ -7,6 +7,7 @@ import com.example.data.Vacancies
 import com.example.data.VerticalBaseClass
 import com.example.data.withouthttp.ListOfOfferses
 import com.example.data.withouthttp.ListOfVacancis
+import com.example.jobsearchapp.databinding.FragmentMainBinding
 import com.example.jobsearchapp.databinding.OffersItemBinding
 import com.example.jobsearchapp.databinding.OffersItemsListBinding
 import com.example.jobsearchapp.databinding.VacanciesItemBinding
@@ -17,15 +18,17 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 object MainScreenDelegates {
 
     val verticalDelegate =
-        adapterDelegateViewBinding<ListOfVacancis, VerticalBaseClass, VacanciesItemsListBinding>(
+        adapterDelegateViewBinding<ListOfVacancis, VerticalBaseClass, FragmentMainBinding>(
             { inflater, container ->
-                VacanciesItemsListBinding.inflate(inflater, container, false).apply {
-                    rvVerticalContainerItemsList.adapter = ListDelegationAdapter(vacanciesDelegate)
+                FragmentMainBinding.inflate(inflater, container, false).apply {
+                    rvVerticalContainerMainFragmentMainScreen.adapter = ListDelegationAdapter(vacanciesDelegate{
+                        it.id
+                    })
                 }
             }
         ) {
             bind {
-                (binding.rvVerticalContainerItemsList.adapter as ListDelegationAdapter<List<VerticalBaseClass>>)
+                (binding.rvVerticalContainerMainFragmentMainScreen.adapter as ListDelegationAdapter<List<VerticalBaseClass>>)
                     .apply {
                         items = item.listVacanci
                         notifyDataSetChanged()
@@ -33,7 +36,7 @@ object MainScreenDelegates {
             }
         }
 
-    private val vacanciesDelegate =
+   fun vacanciesDelegate(itemClickedListener : (Vacancies) -> Unit) =
         adapterDelegateViewBinding<Vacancies, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
                 VacanciesItemBinding.inflate(
@@ -43,10 +46,13 @@ object MainScreenDelegates {
                 )
             }
         ) {
+            binding.root.setOnClickListener {
+                itemClickedListener(item)
+            }
             bind {
                 with(binding) {
                     jobTitle.text = item.title
-                    countCurrentlyViewing.text = "Cdsfasdf ${item.lookingNumber} xtkjdtr"
+                    countCurrentlyViewing.text = "Сейчас просматривает ${item.lookingNumber} человек"
                     city.text = item.town
                     salary.text = item.salaryShort
                     experience.text = item.previewExperienceText
