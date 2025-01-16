@@ -7,15 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.navigation.fragment.navArgs
+import com.example.data.Vacancies
+import com.example.data.withouthttp.listOfVacancies
+import com.example.jobsearchapp.databinding.FragmentVacancieBinding
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARGS_ID_FRAG_VAC = "param1"
 
 class FragmentVacancie : Fragment() {
 
+//    private lateinit var idOfVacancies: String
+    private val args by navArgs<FragmentVacancieArgs>()
 
-    private var param1: String? = null
-    private var param2: String? = null
+    private val binding by viewBinding(FragmentVacancieBinding::bind)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,8 +30,7 @@ class FragmentVacancie : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+                binding.tvTitle.text = args.vacancies.title
     }
 
     override val defaultViewModelCreationExtras: CreationExtras
@@ -36,11 +38,10 @@ class FragmentVacancie : Fragment() {
 
     companion object {
 
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(paramId: String) =
             FragmentVacancie().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARGS_ID_FRAG_VAC, paramId)
                 }
             }
     }

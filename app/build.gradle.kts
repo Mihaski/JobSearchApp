@@ -1,8 +1,12 @@
+import org.jetbrains.kotlin.fir.declarations.builder.buildScript
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-
+//Added
     alias(libs.plugins.ksp)
+    id("androidx.navigation.safeargs")
+
 }
 
 android {
@@ -48,21 +52,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+//Added
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-
     implementation(libs.adapter.delegates)
     implementation(libs.adapter.delegates.viewbinding)
-
     implementation(project(":data"))
-
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
-
     implementation(libs.lifecycle.ksp)
 }

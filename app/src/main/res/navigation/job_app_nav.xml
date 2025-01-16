@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentTest"
-        android:name="com.example.jobsearchapp.FragmentTest"
+        android:name="com.example.jobsearchapp.FragmentPartOfMainVertical"
         android:label="FragmentTest" />
     <fragment
         android:id="@+id/fragmentVacancie"
@@ -44,7 +44,7 @@
         android:label="fragment_vacancie"
         tools:layout="@layout/fragment_vacancie">
         <argument
-            android:name="Vacancies"
+            android:name="vacancies"
             app:argType="com.example.data.Vacancies" />
     </fragment>
 </navigation>

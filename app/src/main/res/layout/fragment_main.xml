@@ -10,6 +10,7 @@
     tools:context=".FragmentMain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -67,46 +68,40 @@
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_horizontal_container_main_fragment_main_screen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-    <TextView
-        style="@style/style_sf_pro_bold_white"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/horizontal_container"
+        android:name="com.example.jobsearchapp.FragmentPartOfMainHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/tv_offers_for_you"
-        android:textSize="20sp" />
+        tools:layout="@layout/offers_items_list" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vertical_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_vertical_container_main_fragment_main_screen"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/vertical_container_for_rv"
+            android:name="com.example.jobsearchapp.FragmentPartOfMainVertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/butt_show_all_vacancies"
+            app:layout_constraintBottom_toTopOf="@id/butt_show_all_vacancies"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/vacancies_item" />
+            tools:layout="@layout/vacancies_items_list" />
 
         <Button
             android:id="@+id/butt_show_all_vacancies"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="15dp"
             android:backgroundTint="@color/blue"
+            android:paddingTop="15dp"
             android:text="@string/butt_show_vacancy"
             android:textColor="@color/white"
             app:cornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_vertical_container_main_fragment_main_screen" />
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </LinearLayout>

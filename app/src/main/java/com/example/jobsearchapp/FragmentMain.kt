@@ -5,16 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.data.withouthttp.ListOfOfferses
-import com.example.data.withouthttp.ListOfVacancis
-import com.example.data.withouthttp.listOfOffers
-import com.example.data.withouthttp.listOfVacancies
-import com.example.jobsearchapp.MainScreenDelegates.horizontalDelegate
-import com.example.jobsearchapp.MainScreenDelegates.vacanciesDelegate
-import com.example.jobsearchapp.MainScreenDelegates.verticalDelegate
 import com.example.jobsearchapp.databinding.FragmentMainBinding
-import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,17 +25,6 @@ class FragmentMain : Fragment() {
 
     private val binding by viewBinding(FragmentMainBinding::bind) //!! IMPORTANT only onViewCreated
 
-    private val verticalAdapter = ListDelegationAdapter(
-        verticalDelegate
-//        {
-//            val args = Bundle().apply { putString(param1, it.id) }
-//            findNavController().navigate(R.id.action_fragmentMain_to_fragmentVacancie, args)
-//        }
-    )
-    private val horizontalAdapter = ListDelegationAdapter(
-        horizontalDelegate
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -55,17 +35,8 @@ class FragmentMain : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvVerticalContainerMainFragmentMainScreen.adapter = verticalAdapter
-        verticalAdapter.apply {
-            items = listOf(ListOfVacancis(listOfVacancies))
-            notifyDataSetChanged()
-        }
 
-        binding.rvHorizontalContainerMainFragmentMainScreen.adapter = horizontalAdapter
-        horizontalAdapter.apply {
-            items = listOf(ListOfOfferses(listOfOffers))
-            notifyDataSetChanged()
-        }
+
     }
 
     override fun onCreateView(
