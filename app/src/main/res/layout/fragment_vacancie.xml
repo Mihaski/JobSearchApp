@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-
+            android:id="@+id/button_arrow_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -91,10 +91,23 @@
         android:layout_marginBottom="5dp"
         android:paddingBottom="5dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/container_green_card"
+        app:layout_constraintBottom_toTopOf="@id/tv_schedules"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_salary_full"
         tools:text="title_exp" />
+
+    <TextView
+        android:id="@+id/tv_schedules"
+        style="@style/style_sf_pro_bold_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/container_green_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/experience"
+        tools:text="schedules" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_green_card"
@@ -102,13 +115,14 @@
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experience">
+        app:layout_constraintTop_toBottomOf="@+id/tv_schedules">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/container_responded_count"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/dark_green"
             app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toStartOf="@+id/container_looking_number"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,8 +130,24 @@
 
             <TextView
                 android:id="@+id/tv_responded_count"
-                android:layout_width="0dp"
-                android:layout_height="50dp" />
+                style="@style/style_sf_pro_bold_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="8dp"
+                android:gravity="start"
+                android:padding="5dp"
+                tools:text="applied_number" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/image_view_icon_for_applied"
+                android:src="@drawable/vector_man_green" />
+
 
         </androidx.cardview.widget.CardView>
 
@@ -125,6 +155,7 @@
             android:id="@+id/container_looking_number"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_green"
             app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/container_responded_count"
@@ -132,27 +163,84 @@
 
             <TextView
                 android:id="@+id/tv_looking_number"
-                android:layout_width="0dp"
-                android:layout_height="50dp" />
+                style="@style/style_sf_pro_bold_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="8dp"
+                android:gravity="start"
+                android:padding="5dp"
+                tools:text="looking_number" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/image_view_icon_for_looking_number"
+                android:src="@drawable/vector_eye_green" />
 
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/image_maps_hardcode"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_container_maps_hardcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/hardcode_image"
-        android:paddingBottom="20dp"
-        android:src="@drawable/image_maps_hardcode_png"
+        android:backgroundTint="@color/grey_3"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_green_card" />
+        app:layout_constraintTop_toBottomOf="@+id/container_green_card">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <TextView
+                android:id="@+id/tv_company_name"
+                style="@style/style_sf_pro_bold_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                tools:text="Mobirix" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/hardcode_image"
+                android:src="@drawable/image_maps_hardcode_png_this"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
+
+            <TextView
+                android:id="@+id/tv_street"
+                style="@style/style_sf_pro_bold_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Минск, улица Бирюзова, 4/5" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--TODO:// Обязательно нижний констреинт нужен, иначе не до конца крутится-->
     <ScrollView
+        android:id="@+id/container_scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_maps_hardcode">
+        app:layout_constraintTop_toBottomOf="@+id/image_container_maps_hardcode">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -160,25 +248,132 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_field_description"
                 style="@style/style_sf_pro_bold_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="@string/large_text"
-                android:paddingBottom="5dp"/>
+                android:paddingBottom="16dp"
+                android:textSize="14sp"
+                tools:text="@string/large_text" />
 
             <TextView
                 style="@style/style_sf_pro_bold_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Ваши задачи"
-                android:paddingBottom="5dp"/>
+                android:paddingBottom="8dp"
+                android:text="@string/hardcode_your_tasks"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_field_responsibilities"
+                style="@style/style_sf_pro_bold_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="32dp"
+                android:textSize="14sp"
+                tools:text="@string/large_text" />
 
             <TextView
                 style="@style/style_sf_pro_bold_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="@string/large_text"
-                android:paddingBottom="5dp"/>
+                android:paddingBottom="8dp"
+                android:text="@string/hardcode_text_ask_questions_employer"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="@string/hardcode_grey_color_explanations"
+                android:textColor="@color/grey_1"
+                android:textSize="14sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/grey_2"
+                app:cardCornerRadius="50dp">
+
+                <TextView
+                    android:id="@+id/tv_array_questions_1"
+                    style="@style/style_sf_pro_bold_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="14sp"
+                    tools:text="@string/tools_text_fragment_vacancie_1" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/grey_2"
+                app:cardCornerRadius="50dp">
+
+                <TextView
+                    android:id="@+id/tv_array_questions_2"
+                    style="@style/style_sf_pro_bold_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="14sp"
+                    tools:text="@string/tools_text_fragment_vacancie_2" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/grey_2"
+                app:cardCornerRadius="50dp">
+
+                <TextView
+                    android:id="@+id/tv_array_questions_3"
+                    style="@style/style_sf_pro_bold_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="14sp"
+                    tools:text="@string/tools_text_fragment_vacancie_3" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/grey_2"
+                app:cardCornerRadius="50dp">
+
+                <TextView
+                    android:id="@+id/tv_array_questions_4"
+                    style="@style/style_sf_pro_bold_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="14sp"
+                    tools:text="@string/tools_text_fragment_vacancie_4" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/button_applied_vacancie"
+                style="@style/style_sf_pro_bold_white"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/button_text_applied"
+                android:textSize="16sp"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
     </ScrollView>

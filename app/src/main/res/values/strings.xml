@@ -22,7 +22,7 @@
         "imagery, large scale typography, and intentional white space create a bold and graphic "
         "interface that immerse the user in the experience.\n"
         "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
+        "waypoints for the user."
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -66,5 +66,18 @@
     <string name="butt_favorites_des_on">button for favorites logic</string>
     <string name="share_useless_des_on">share_useless</string>
     <string name="hardcode_image">hardcode_image</string>
+    <string name="image_view_icon_for_applied">image_view_icon_for_applied</string>
+    <string name="image_view_icon_for_looking_number">image_view_icon_for_looking_number</string>
+    <string name="hardcode_your_tasks">Ваши задачи</string>
+    <string name="hardcode_text_ask_questions_employer">Задайте вопрос работодателю</string>
+    <string name="hardcode_grey_color_explanations">Он получит его с откликом на вакансию</string>
+    <string name="tools_text_fragment_vacancie_1">Где распологается место работы?</string>
+    <string name="tools_text_fragment_vacancie_2">Какой график работы?</string>
+    <string name="tools_text_fragment_vacancie_3">Вакансия открыта?</string>
+    <string name="tools_text_fragment_vacancie_4">Какая оплата труда?</string>
+    <string name="button_text_applied">Откликнуться</string>
+    <string name="avatar_image">avatar_image</string>
+    <string name="cv_for_response">Резюме для отклика</string>
+    <string name="add_text_with_cv">Добавить сопроводительное</string>
 
 </resources>
