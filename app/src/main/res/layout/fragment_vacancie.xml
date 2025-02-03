@@ -188,7 +188,7 @@
         android:id="@+id/image_container_maps_hardcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey_3"
+        android:backgroundTint="@color/grey_1"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -286,7 +286,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
                 android:text="@string/hardcode_grey_color_explanations"
-                android:textColor="@color/grey_1"
+                android:textColor="@color/grey_3"
                 android:textSize="14sp" />
 
             <androidx.cardview.widget.CardView

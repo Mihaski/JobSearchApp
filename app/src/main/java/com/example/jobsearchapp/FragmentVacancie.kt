@@ -58,6 +58,9 @@ class FragmentVacancie : Fragment() {
                 tvArrayQuestions1.text = questions
             }
         }
+        binding.buttonAppliedVacancie.setOnClickListener {
+            findNavController().navigate(FragmentVacancieDirections.actionFragmentVacancieToFragmentDialogResponse())
+        }
 //        binding.tvTitle.text=args.vacancies.title
 //        binding.tvSalaryFull.text=args.vacancies.salaryFull
 //        binding.experience.text="Требуемый опыт: ${args.vacancies.experienceText}"

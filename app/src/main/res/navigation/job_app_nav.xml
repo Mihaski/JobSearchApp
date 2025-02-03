@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/job_app_nav"
     app:startDestination="@id/fragmentLkEnter">
+
     <fragment
         android:id="@+id/fragmentLkEnter"
         android:name="com.example.jobsearchapp.FragmentLkEnter"
-        android:label="fragment_enter_lk"
+        android:label="@string/fragment_enter_lk_label"
         tools:layout="@layout/fragment_lk_enter">
         <action
             android:id="@+id/action_fragmentLkEnter_to_fragment_approved"
             app:destination="@id/fragment_approved" />
     </fragment>
+
     <fragment
         android:id="@+id/fragment_approved"
         android:name="com.example.jobsearchapp.FragmentApproved"
@@ -21,10 +23,8 @@
         <action
             android:id="@+id/action_fragment_approved_to_fragmentMain"
             app:destination="@id/fragmentMain" />
-        <action
-            android:id="@+id/action_fragment_approved_to_fragmentTest"
-            app:destination="@id/fragmentTest" />
     </fragment>
+
     <fragment
         android:id="@+id/fragmentMain"
         android:name="com.example.jobsearchapp.FragmentMain"
@@ -34,10 +34,7 @@
             android:id="@+id/action_fragmentMain_to_fragmentVacancie"
             app:destination="@id/fragmentVacancie" />
     </fragment>
-    <fragment
-        android:id="@+id/fragmentTest"
-        android:name="com.example.jobsearchapp.FragmentPartOfMainVertical"
-        android:label="FragmentTest" />
+
     <fragment
         android:id="@+id/fragmentVacancie"
         android:name="com.example.jobsearchapp.FragmentVacancie"
@@ -46,5 +43,20 @@
         <argument
             android:name="vacancies"
             app:argType="com.example.data.Vacancies" />
+        <action
+            android:id="@+id/action_fragmentVacancie_to_fragmentDialogResponse"
+            app:destination="@id/fragmentDialogResponse" />
     </fragment>
+
+    <dialog
+        android:id="@+id/fragmentDialogResponse"
+        android:name="com.example.jobsearchapp.FragmentDialogResponse"
+        android:label="FragmentDialogResponse"
+        tools:layout="@layout/response_fragment_dialog" />
+
+    <fragment
+        android:id="@+id/fragmentFavourites"
+        android:name="com.example.jobsearchapp.FragmentFavourites"
+        android:label="FragmentFavourites"
+        tools:layout="@layout/fragment_favourites" />
 </navigation>

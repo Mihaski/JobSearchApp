@@ -79,5 +79,8 @@
     <string name="avatar_image">avatar_image</string>
     <string name="cv_for_response">Резюме для отклика</string>
     <string name="add_text_with_cv">Добавить сопроводительное</string>
+    <string name="your_add_message">Ваше сопроводительное письмо</string>
+    <string name="title_favourites">Избранное</string>
+    <string name="fragment_enter_lk_label">fragment_enter_lk</string>
 
 </resources>
