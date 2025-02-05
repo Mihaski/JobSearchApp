@@ -15,7 +15,7 @@ data class Vacancies(
     val previewExperienceText: String = "",
     val experienceText: String = "",
     val publishedDate: String = "",
-    val isFavorite: String = "",
+    var isFavorite: String = "",
     val salaryShort: String = "",
     val salaryFull: String = "",
     val schedules: String = "",

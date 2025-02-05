@@ -20,9 +20,11 @@ class FragmentPartOfMainVertical : Fragment() {
 //            parentFragmentManager.beginTransaction()
 //                .replace(R.id.vertical_container_for_rv, FragmentVacancie.newInstance(it.id))
 //                .commit()
-            findNavController().navigate(FragmentMainDirections.actionFragmentMainToFragmentVacancie(
-                it
-            ))
+            findNavController().navigate(
+                FragmentMainDirections.actionFragmentMainToFragmentVacancie(
+                    it
+                )
+            )
         }
     )
 

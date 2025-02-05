@@ -58,5 +58,9 @@
         android:id="@+id/fragmentFavourites"
         android:name="com.example.jobsearchapp.FragmentFavourites"
         android:label="FragmentFavourites"
-        tools:layout="@layout/fragment_favourites" />
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_fragmentFavourites_to_fragmentVacancie"
+            app:destination="@id/fragmentVacancie" />
+    </fragment>
 </navigation>

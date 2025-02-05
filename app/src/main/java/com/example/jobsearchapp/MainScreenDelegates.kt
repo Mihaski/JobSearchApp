@@ -41,6 +41,19 @@ object MainScreenDelegates {
             binding.root.setOnClickListener {
                 itemClickedListener(item)
             }
+            binding.buttFavoritesHeartBlueOrInactive.setOnClickListener {
+                if (item.isFavorite == "false") {
+                    item.isFavorite = "true"
+                    binding.buttFavoritesHeartBlueOrInactive.setImageResource(
+                        R.drawable.heart_blue
+                    )
+                } else {
+                    item.isFavorite = "false"
+                    binding.buttFavoritesHeartBlueOrInactive.setImageResource(
+                        R.drawable.ic_favorites
+                    )
+                }
+            }
             bind {
                 with(binding) {
                     jobTitle.text = item.title
@@ -51,6 +64,10 @@ object MainScreenDelegates {
                     experience.text = item.previewExperienceText
                     companyName.text = item.company
                     dateOfPublication.text = item.publishedDate
+                    if (item.isFavorite == "true")
+                        buttFavoritesHeartBlueOrInactive.setImageResource(
+                            R.drawable.heart_blue
+                        )
                 }
             }
         }

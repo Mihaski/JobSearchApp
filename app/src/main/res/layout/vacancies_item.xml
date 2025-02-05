@@ -19,7 +19,7 @@
             android:layout_margin="10dp"
             android:orientation="vertical"
             android:padding="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/butt_favorites_on_main_screen"
+            app:layout_constraintEnd_toStartOf="@+id/butt_favorites_heart_blue_or_inactive"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -117,7 +117,7 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/butt_favorites_on_main_screen"
+            android:id="@+id/butt_favorites_heart_blue_or_inactive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"

@@ -25,7 +25,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="16dp"
-        android:id="@+id/rv_vertical_container_items_list_without_screen"
+        android:id="@+id/rv_vertical_container_items_list_favorites"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"

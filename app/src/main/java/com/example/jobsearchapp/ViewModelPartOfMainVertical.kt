@@ -6,13 +6,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.data.Vacancies
 
-class VacanciesViewModel(
+class ViewModelPartOfMainVertical(
     application: Application,
 ) : AndroidViewModel(application) {
 
     private val _vacancies = MutableLiveData<Vacancies>()
     val vacancies: LiveData<Vacancies>
         get() = _vacancies
+
 
 
 }
