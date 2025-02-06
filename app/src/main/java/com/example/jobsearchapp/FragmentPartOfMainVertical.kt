@@ -33,7 +33,6 @@ class FragmentPartOfMainVertical : Fragment() {
         binding.rvVerticalContainerItemsListWithoutScreen.adapter = verticalAdapter
         verticalAdapter.apply {
             items = listOfVacancies
-            notifyDataSetChanged()
         }
     }
 

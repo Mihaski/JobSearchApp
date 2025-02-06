@@ -23,7 +23,6 @@ object MainScreenDelegates {
 //                (binding.rvVerticalContainerItemsListWithoutScreen.adapter as ListDelegationAdapter<List<VerticalBaseClass>>)
 //                    .apply {
 //                        items = item.listVacanci
-//                        notifyDataSetChanged()
 //                    }
 //            }
 //        }
@@ -84,7 +83,6 @@ object MainScreenDelegates {
 //                (binding.rvHorizontalContainerItemsList.adapter as ListDelegationAdapter<List<HorizontalBaseClass>>)
 //                    .apply {
 //                        items = item.listOffers
-//                        notifyDataSetChanged()
 //                    }
 //            }
 //        }

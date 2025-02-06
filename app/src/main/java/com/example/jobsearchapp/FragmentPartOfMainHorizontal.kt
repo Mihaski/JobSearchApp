@@ -23,7 +23,6 @@ class FragmentPartOfMainHorizontal : Fragment() {
         binding.rvHorizontalContainerItemsList.adapter = horizontalAdapter
         horizontalAdapter.apply {
             items = listOfOffers
-            notifyDataSetChanged()
         }
     }
 

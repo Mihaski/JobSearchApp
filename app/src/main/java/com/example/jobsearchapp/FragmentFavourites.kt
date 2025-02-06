@@ -41,7 +41,6 @@ class FragmentFavourites : Fragment() {
         binding.rvVerticalContainerItemsListFavorites.adapter = verticalAdapter
         verticalAdapter.apply {
             items = listOfFavourites
-            notifyDataSetChanged()
         }
     }
 }
