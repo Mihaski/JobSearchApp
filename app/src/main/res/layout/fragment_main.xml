@@ -7,7 +7,7 @@
     android:background="@color/background"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".FragmentMain">
+    tools:context=".presentation.FragmentMain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_container"
@@ -70,7 +70,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/horizontal_container"
-        android:name="com.example.jobsearchapp.FragmentPartOfMainHorizontal"
+        android:name="com.example.jobsearchapp.presentation.FragmentPartOfMainHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -83,7 +83,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/vertical_container_for_rv"
-            android:name="com.example.jobsearchapp.FragmentPartOfMainVertical"
+            android:name="com.example.jobsearchapp.presentation.FragmentPartOfMainVertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@id/butt_show_all_vacancies"

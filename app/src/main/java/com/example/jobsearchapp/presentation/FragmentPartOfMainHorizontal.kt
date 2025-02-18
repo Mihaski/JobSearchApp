@@ -1,4 +1,4 @@
-package com.example.jobsearchapp
+package com.example.jobsearchapp.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.data.withouthttp.listOfOffers
 import com.example.jobsearchapp.MainScreenDelegates.offersOneItemDelegate
+import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.OffersItemsListBinding
+import com.example.jobsearchapp.utils.viewBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 class FragmentPartOfMainHorizontal : Fragment() {

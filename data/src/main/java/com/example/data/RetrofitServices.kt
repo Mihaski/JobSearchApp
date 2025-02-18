@@ -8,5 +8,5 @@ interface RetrofitServices {
     suspend fun getOffersList(): Response<List<Offers>>
 
     @GET("vacancies")
-    suspend fun getVacanciesList(): Response<List<Vacancies>>
+    suspend fun getVacanciesList(): Response<List<Vacancie>>
 }

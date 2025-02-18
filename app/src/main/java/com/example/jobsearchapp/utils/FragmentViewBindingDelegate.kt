@@ -1,4 +1,4 @@
-package com.example.jobsearchapp
+package com.example.jobsearchapp.utils
 
 import android.view.View
 import androidx.fragment.app.Fragment

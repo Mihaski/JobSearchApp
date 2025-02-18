@@ -1,4 +1,4 @@
-package com.example.jobsearchapp
+package com.example.jobsearchapp.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,16 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.FragmentVacancieBinding
-
-//private const val ARGS_ID_FRAG_VAC = "param1"
+import com.example.jobsearchapp.utils.viewBinding
 
 class FragmentVacancie : Fragment() {
 
-    //    private lateinit var idOfVacancies: String
     private val args by navArgs<FragmentVacancieArgs>()
 
     private val binding by viewBinding(FragmentVacancieBinding::bind)
@@ -61,22 +59,5 @@ class FragmentVacancie : Fragment() {
         binding.buttonAppliedVacancie.setOnClickListener {
             findNavController().navigate(FragmentVacancieDirections.actionFragmentVacancieToFragmentDialogResponse())
         }
-//        binding.tvTitle.text=args.vacancies.title
-//        binding.tvSalaryFull.text=args.vacancies.salaryFull
-//        binding.experience.text="Требуемый опыт: ${args.vacancies.experienceText}"
-//        binding.tvSchedules.text=args.vacancies.schedules
     }
-
-    override val defaultViewModelCreationExtras: CreationExtras
-        get() = super.defaultViewModelCreationExtras
-
-//    companion object {
-//
-//        fun newInstance(paramId: String) =
-//            FragmentVacancie().apply {
-//                arguments = Bundle().apply {
-//                    putString(ARGS_ID_FRAG_VAC, paramId)
-//                }
-//            }
-//    }
 }

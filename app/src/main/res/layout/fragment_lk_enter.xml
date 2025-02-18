@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     android:orientation="vertical"
-    tools:context=".FragmentLkEnter">
+    tools:context=".presentation.FragmentLkEnter">
 
     <TextView
         android:id="@+id/tv_enter_lk"

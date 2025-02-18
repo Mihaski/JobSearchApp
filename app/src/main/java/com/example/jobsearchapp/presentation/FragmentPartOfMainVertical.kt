@@ -1,4 +1,4 @@
-package com.example.jobsearchapp
+package com.example.jobsearchapp.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.data.withouthttp.listOfVacancies
 import com.example.jobsearchapp.MainScreenDelegates.vacanciesOneItemDelegate
+import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.VacanciesItemsListBinding
+import com.example.jobsearchapp.utils.viewBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 class FragmentPartOfMainVertical : Fragment() {
@@ -17,9 +19,6 @@ class FragmentPartOfMainVertical : Fragment() {
 
     private val verticalAdapter = ListDelegationAdapter(
         vacanciesOneItemDelegate {
-//            parentFragmentManager.beginTransaction()
-//                .replace(R.id.vertical_container_for_rv, FragmentVacancie.newInstance(it.id))
-//                .commit()
             findNavController().navigate(
                 FragmentMainDirections.actionFragmentMainToFragmentVacancie(
                     it

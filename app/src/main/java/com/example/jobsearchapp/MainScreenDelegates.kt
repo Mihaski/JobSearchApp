@@ -3,7 +3,7 @@ package com.example.jobsearchapp
 import androidx.core.view.isVisible
 import com.example.data.HorizontalBaseClass
 import com.example.data.Offers
-import com.example.data.Vacancies
+import com.example.data.Vacancie
 import com.example.data.VerticalBaseClass
 import com.example.jobsearchapp.databinding.OffersItemBinding
 import com.example.jobsearchapp.databinding.VacanciesItemBinding
@@ -27,8 +27,8 @@ object MainScreenDelegates {
 //            }
 //        }
 
-    fun vacanciesOneItemDelegate(itemClickedListener: (Vacancies) -> Unit) =
-        adapterDelegateViewBinding<Vacancies, VerticalBaseClass, VacanciesItemBinding>(
+    fun vacanciesOneItemDelegate(itemClickedListener: (Vacancie) -> Unit) =
+        adapterDelegateViewBinding<Vacancie, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
                 VacanciesItemBinding.inflate(
                     inflater,
