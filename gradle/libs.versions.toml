@@ -9,15 +9,18 @@ appcompat = "1.6.1"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
+#modified
+
 #Added
 nav_version = "2.8.0"
 retrofitVer = "2.11.0"
 retrofitConVer = "2.5.0"
 adapter_delegates_ver = "4.3.2"
 lifecycle_version = "2.8.7"
-ksp_version = "2.1.0-1.0.29"
 legacySupportV4 = "1.0.0"
 recyclerview = "1.3.2"
+hiltVer = "2.55"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -32,17 +35,24 @@ androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui"
 #Added
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVer" }
 retrofit_converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitConVer" }
+
 adapter_delegates = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter_delegates_ver" }
 adapter_delegates_viewbinding = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter_delegates_ver" }
+
 lifecycle_viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle_version" }
 lifecycle_livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle_version" }
-lifecycle_ksp = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "lifecycle_version" }
+lifecycle_compiler = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "lifecycle_version" }
+
 androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+
+hilt =  { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVer" }
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltVer" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltVer" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 #Added
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp_version" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVer" }

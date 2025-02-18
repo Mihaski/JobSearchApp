@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     //Added
     id("kotlin-parcelize")
+    id("kotlin-kapt")
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -45,4 +47,6 @@ dependencies {
 //Added
     implementation(libs.retrofit.converter)
     implementation(libs.retrofit)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 }

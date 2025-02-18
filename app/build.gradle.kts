@@ -2,8 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 //Added
-    alias(libs.plugins.ksp)
+    id("kotlin-kapt")
     id("androidx.navigation.safeargs")
+    alias(libs.plugins.hilt)
 
 }
 
@@ -63,5 +64,7 @@ dependencies {
     implementation(project(":data"))
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
-    implementation(libs.lifecycle.ksp)
+    kapt(libs.lifecycle.compiler)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 }

@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.data.Vacancie
 
-class ViewModelPartOfMainVertical(
+class MainViewModel(
     application: Application,
 ) : AndroidViewModel(application) {
 
