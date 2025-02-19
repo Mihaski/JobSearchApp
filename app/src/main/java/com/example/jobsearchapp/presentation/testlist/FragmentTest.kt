@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
 import com.example.jobsearchapp.MainViewModel
 import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.FragmentTestBinding
 import com.example.jobsearchapp.utils.viewBinding
-import kotlinx.coroutines.launch
 
 class FragmentTest : Fragment() {
 
@@ -33,8 +31,8 @@ class FragmentTest : Fragment() {
 
         adapterTest.onVacancieClickListener = {
 //            val currentState = viewModel.store.myLiveDataObservable.value
-            if (it.isFavorite == "false") it.isFavorite = "true"
-            else it.isFavorite = "false"
+            if (it.isFavorite) it.isFavorite = false
+            else it.isFavorite = true
             viewModel.refreshVacancie()
         }
     }
@@ -48,7 +46,7 @@ class FragmentTest : Fragment() {
         return inflater.inflate(R.layout.fragment_test, container, false)
     }
 
-//    private fun onFavoriteIconClicked(selectedProductId: Int) {
+//    private fun onFavoriteIconClicked(selectedItem: Vacancie) {
 //        viewModel.viewModelScope.launch {
 //            viewModel.store.update { currentState ->
 //                val currentFavoriteIds = currentState.favoriteVacancieIds

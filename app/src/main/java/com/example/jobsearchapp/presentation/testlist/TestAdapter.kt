@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.example.data.Vacancie
+import com.example.data.model.NetworkVacancie
 import com.example.jobsearchapp.R
 
-class TestAdapter : ListAdapter<Vacancie, TestViewHolder>(VacancieDiffCallback()) {
+class TestAdapter : ListAdapter<NetworkVacancie, TestViewHolder>(VacancieDiffCallback()) {
 
-    var onVacancieClickListener: ((Vacancie) -> Unit)? = null
+    var onVacancieClickListener: ((NetworkVacancie) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
         return TestViewHolder(
@@ -21,20 +22,22 @@ class TestAdapter : ListAdapter<Vacancie, TestViewHolder>(VacancieDiffCallback()
         val vacancie = getItem(position)
         holder.tvTitle.text = vacancie.title
         holder.tvLookingNumber.text = "Сейчас просматривает ${vacancie.lookingNumber} человек"
-        holder.tvCity.text = vacancie.town
-        holder.tvSalary.text = vacancie.salaryShort
-        holder.tvExpirience.text = vacancie.previewExperienceText
+        holder.tvCity.text = "${vacancie.address.town}, ${vacancie.address.street}, ${vacancie.address.house}"
+        holder.tvSalary.text = vacancie.salary.short
+        holder.tvExpirience.text = vacancie.experience.previewText
         holder.tvCompanyName.text = vacancie.company
         holder.tvDateOfPublication.text = vacancie.publishedDate
-        val resId = if (vacancie.isFavorite == "false") R.drawable.ic_favorites
-        else R.drawable.heart_blue
+        val resId = if (vacancie.isFavorite) R.drawable.heart_blue
+        else R.drawable.ic_favorites
         holder.isFavoriteButton.setImageResource(
             resId
         )
         holder.isFavoriteButton.setOnClickListener {
+            val resIdIn = if (vacancie.isFavorite) R.drawable.heart_blue
+            else R.drawable.ic_favorites
             onVacancieClickListener?.invoke(vacancie)
             holder.isFavoriteButton.setImageResource(
-                resId
+                resIdIn
             )
 //            notifyItemChanged(position)
         }

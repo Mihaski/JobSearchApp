@@ -15,7 +15,7 @@ class MainViewModel() : ViewModel() {
     fun refreshVacancie() = viewModelScope.launch {
         store.update {
             it.copy(
-                vacancies = repository.getVacancies()
+                vacancies = repository.getNetworkVacancies()
             )
         }
     }
