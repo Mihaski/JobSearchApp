@@ -36,7 +36,7 @@ class TestAdapter : ListAdapter<Vacancie, TestViewHolder>(VacancieDiffCallback()
             holder.isFavoriteButton.setImageResource(
                 resId
             )
-            notifyItemChanged(position)
+//            notifyItemChanged(position)
         }
     }
 

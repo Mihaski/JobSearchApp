@@ -1,19 +1,22 @@
 package com.example.jobsearchapp
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.example.data.Vacancie
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.data.Repository
+import com.example.jobsearchapp.state.ApplicationState
+import com.example.jobsearchapp.state.Store
+import kotlinx.coroutines.launch
 
-class MainViewModel(
-    application: Application,
-) : AndroidViewModel(application) {
+class MainViewModel() : ViewModel() {
 
-    private val _vacancie = MutableLiveData<Vacancie>()
-    val vacancie: LiveData<Vacancie>
-        get() = _vacancie
+    val store = Store(ApplicationState())
+    private val repository = Repository()
 
-
-
+    fun refreshVacancie() = viewModelScope.launch {
+        store.update {
+            it.copy(
+                vacancies = repository.getVacancies()
+            )
+        }
+    }
 }
