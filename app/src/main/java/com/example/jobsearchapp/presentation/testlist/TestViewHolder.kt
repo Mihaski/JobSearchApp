@@ -10,8 +10,8 @@ class TestViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     val tvLookingNumber=view.findViewById<TextView>(R.id.count_currently_viewing)
     val tvTitle=view.findViewById<TextView>(R.id.job_title)
-    val salary=view.findViewById<TextView>(R.id.salary)
-    val city=view.findViewById<TextView>(R.id.city)
+    val tvSalary=view.findViewById<TextView>(R.id.salary)
+    val tvCity=view.findViewById<TextView>(R.id.city)
     val tvCompanyName=view.findViewById<TextView>(R.id.company_name)
     val tvExpirience=view.findViewById<TextView>(R.id.experience)
     val tvDateOfPublication=view.findViewById<TextView>(R.id.date_of_publication)

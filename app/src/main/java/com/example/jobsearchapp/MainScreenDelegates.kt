@@ -11,22 +11,6 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 object MainScreenDelegates {
 
-//    val verticalDelegate =
-//        adapterDelegateViewBinding<ListOfVacancis, VerticalBaseClass, VacanciesItemsListBinding>(
-//            { inflater, container ->
-//                VacanciesItemsListBinding.inflate(inflater, container, false).apply {
-//                    rvVerticalContainerItemsListWithoutScreen.adapter = ListDelegationAdapter(vacanciesDelegate)
-//                }
-//            }
-//        ) {
-//            bind {
-//                (binding.rvVerticalContainerItemsListWithoutScreen.adapter as ListDelegationAdapter<List<VerticalBaseClass>>)
-//                    .apply {
-//                        items = item.listVacanci
-//                    }
-//            }
-//        }
-
     fun vacanciesOneItemDelegate(itemClickedListener: (Vacancie) -> Unit) =
         adapterDelegateViewBinding<Vacancie, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
@@ -41,17 +25,16 @@ object MainScreenDelegates {
                 itemClickedListener(item)
             }
             binding.buttFavoritesHeartBlueOrInactive.setOnClickListener {
-                if (item.isFavorite == "false") {
+                val resId = if (item.isFavorite == "false") {
                     item.isFavorite = "true"
-                    binding.buttFavoritesHeartBlueOrInactive.setImageResource(
-                        R.drawable.heart_blue
-                    )
+                    R.drawable.heart_blue
                 } else {
                     item.isFavorite = "false"
-                    binding.buttFavoritesHeartBlueOrInactive.setImageResource(
-                        R.drawable.ic_favorites
-                    )
+                    R.drawable.ic_favorites
                 }
+                binding.buttFavoritesHeartBlueOrInactive.setImageResource(
+                    resId
+                )
             }
             bind {
                 with(binding) {
@@ -70,22 +53,6 @@ object MainScreenDelegates {
                 }
             }
         }
-
-//    val horizontalDelegate =
-//        adapterDelegateViewBinding<ListOfOfferses, HorizontalBaseClass, OffersItemsListBinding>(
-//            { inflater, container ->
-//                OffersItemsListBinding.inflate(inflater, container, false).apply {
-//                    rvHorizontalContainerItemsList.adapter = ListDelegationAdapter(offersOneItemDelegate)
-//                }
-//            }
-//        ) {
-//            bind {
-//                (binding.rvHorizontalContainerItemsList.adapter as ListDelegationAdapter<List<HorizontalBaseClass>>)
-//                    .apply {
-//                        items = item.listOffers
-//                    }
-//            }
-//        }
 
     val offersOneItemDelegate =
         adapterDelegateViewBinding<Offers, HorizontalBaseClass, OffersItemBinding>(

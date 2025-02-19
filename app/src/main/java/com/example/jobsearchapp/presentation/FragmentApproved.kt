@@ -15,7 +15,7 @@ class FragmentApproved : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_apply).setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_approved_to_fragmentMain)
+            findNavController().navigate(R.id.action_fragment_approved_to_fragmentTest)
         }
     }
 

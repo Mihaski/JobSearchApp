@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_fragment_approved_to_fragmentMain"
             app:destination="@id/fragmentMain" />
+        <action
+            android:id="@+id/action_fragment_approved_to_fragmentTest"
+            app:destination="@id/fragmentTest" />
     </fragment>
 
     <fragment
@@ -63,4 +66,8 @@
             android:id="@+id/action_fragmentFavourites_to_fragmentVacancie"
             app:destination="@id/fragmentVacancie" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentTest"
+        android:name="com.example.jobsearchapp.presentation.testlist.FragmentTest"
+        android:label="FragmentTest" />
 </navigation>
