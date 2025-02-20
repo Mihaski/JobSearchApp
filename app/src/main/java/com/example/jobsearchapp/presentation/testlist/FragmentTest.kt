@@ -13,7 +13,7 @@ import com.example.jobsearchapp.utils.viewBinding
 
 class FragmentTest : Fragment() {
 
-    private val binding by viewBinding(FragmentTestBinding::bind) //!! IMPORTANT only onViewCreated
+    private val binding by viewBinding(FragmentTestBinding::bind)
 
     private val viewModel: MainViewModel by viewModels()
 
@@ -27,14 +27,11 @@ class FragmentTest : Fragment() {
         viewModel.store.myLiveDataObservable.observe(viewLifecycleOwner) {
             adapterTest.submitList(it.vacancies)
         }
-        viewModel.refreshVacancie()
-
         adapterTest.onVacancieClickListener = {
-//            val currentState = viewModel.store.myLiveDataObservable.value
             if (it.isFavorite) it.isFavorite = false
             else it.isFavorite = true
-            viewModel.refreshVacancie()
         }
+        viewModel.refreshVacancie()
     }
 
 
@@ -45,16 +42,4 @@ class FragmentTest : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_test, container, false)
     }
-
-//    private fun onFavoriteIconClicked(selectedItem: Vacancie) {
-//        viewModel.viewModelScope.launch {
-//            viewModel.store.update { currentState ->
-//                val currentFavoriteIds = currentState.favoriteVacancieIds
-//                val newFavoriteIds = if (currentFavoriteIds.contains(selectedProductId))
-//                    currentFavoriteIds.filter { it != selectedProductId }.toSet()
-//                else currentFavoriteIds + setOf(selectedProductId)
-//                return@update currentState.copy(favoriteProductIds = newFavoriteIds)
-//            }
-//        }
-//    }
 }

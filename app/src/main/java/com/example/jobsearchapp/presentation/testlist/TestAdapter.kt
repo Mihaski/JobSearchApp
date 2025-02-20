@@ -33,13 +33,12 @@ class TestAdapter : ListAdapter<NetworkVacancie, TestViewHolder>(VacancieDiffCal
             resId
         )
         holder.isFavoriteButton.setOnClickListener {
+            onVacancieClickListener?.invoke(vacancie)
             val resIdIn = if (vacancie.isFavorite) R.drawable.heart_blue
             else R.drawable.ic_favorites
-            onVacancieClickListener?.invoke(vacancie)
             holder.isFavoriteButton.setImageResource(
                 resIdIn
             )
-//            notifyItemChanged(position)
         }
     }
 
