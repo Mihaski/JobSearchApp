@@ -3,11 +3,11 @@ package com.example.data.withouthttp
 import com.example.data.Vacancie
 import com.example.data.model.Address
 import com.example.data.model.Experience
-import com.example.data.model.NetworkVacancie
+import com.example.data.model.IntVacancie
 import com.example.data.model.Salary
 
 val listOfNetworkVacancie = listOf(
-    NetworkVacancie(
+    IntVacancie(
         Address("4/5", "улица Бирюзова", "Минск"),
         147,
         "Мобирикс",
@@ -15,7 +15,7 @@ val listOfNetworkVacancie = listOf(
                 "будет заниматься проектированием пользовательских интерфейсов внутренних " +
                 "и внешних продуктов компании.",
         Experience("Опыт от 1 до 3 лет", "1–3 года"),
-        "cbf0c984-7c6c-4ada-82da-e29dc698bb50",
+        1,
         false,
         2,
         "2024-02-20",
@@ -35,7 +35,7 @@ val listOfNetworkVacancie = listOf(
         listOf("полная занятость", "полный день"),
         "UI/UX дизайнер"
     ),
-    NetworkVacancie(
+    IntVacancie(
         Address(
             "4/5", "улица Бирюзова", "Минск"
         ),
@@ -47,7 +47,7 @@ val listOfNetworkVacancie = listOf(
         Experience(
             "Опыт от 1 до 3 лет", "1–3 года"
         ),
-        "cbf0c984-7c6c-4ada-82da-e29dc698bb50",
+        2,
         true,
         2,
         "2024-02-20",
@@ -70,7 +70,7 @@ val listOfNetworkVacancie = listOf(
         listOf("полная занятость", "полный день"),
         "UI/UX дизайнер"
     ),
-    NetworkVacancie(
+    IntVacancie(
         Address("4/5", "улица Бирюзова", "Минск"),
         147,
         "Мобирикс",
@@ -78,7 +78,7 @@ val listOfNetworkVacancie = listOf(
                 "будет заниматься проектированием пользовательских интерфейсов внутренних " +
                 "и внешних продуктов компании.",
         Experience("Опыт от 1 до 3 лет", "1–3 года"),
-        "cbf0c984-7c6c-4ada-82da-e29dc698bb50",
+        3,
         false,
         2,
         "2024-02-20",
@@ -98,7 +98,7 @@ val listOfNetworkVacancie = listOf(
         listOf("полная занятость", "полный день"),
         "UI/UX дизайнер"
     ),
-    NetworkVacancie(
+    IntVacancie(
         Address(
             "4/5", "улица Бирюзова", "Минск"
         ),
@@ -110,7 +110,7 @@ val listOfNetworkVacancie = listOf(
         Experience(
             "Опыт от 1 до 3 лет", "1–3 года"
         ),
-        "cbf0c984-7c6c-4ada-82da-e29dc698bb50",
+        4,
         false,
         2,
         "2024-02-20",

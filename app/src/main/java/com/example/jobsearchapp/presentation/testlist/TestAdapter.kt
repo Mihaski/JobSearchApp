@@ -3,13 +3,12 @@ package com.example.jobsearchapp.presentation.testlist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.data.Vacancie
-import com.example.data.model.NetworkVacancie
+import com.example.data.model.IntVacancie
 import com.example.jobsearchapp.R
 
-class TestAdapter : ListAdapter<NetworkVacancie, TestViewHolder>(VacancieDiffCallback()) {
+class TestAdapter : ListAdapter<IntVacancie, TestViewHolder>(VacancieDiffCallback()) {
 
-    var onVacancieClickListener: ((NetworkVacancie) -> Unit)? = null
+    var onFavoriteClickListener: ((IntVacancie) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
         return TestViewHolder(
@@ -22,7 +21,8 @@ class TestAdapter : ListAdapter<NetworkVacancie, TestViewHolder>(VacancieDiffCal
         val vacancie = getItem(position)
         holder.tvTitle.text = vacancie.title
         holder.tvLookingNumber.text = "Сейчас просматривает ${vacancie.lookingNumber} человек"
-        holder.tvCity.text = "${vacancie.address.town}, ${vacancie.address.street}, ${vacancie.address.house}"
+        holder.tvCity.text =
+            "${vacancie.address.town}, ${vacancie.address.street}, ${vacancie.address.house}"
         holder.tvSalary.text = vacancie.salary.short
         holder.tvExpirience.text = vacancie.experience.previewText
         holder.tvCompanyName.text = vacancie.company
@@ -33,7 +33,9 @@ class TestAdapter : ListAdapter<NetworkVacancie, TestViewHolder>(VacancieDiffCal
             resId
         )
         holder.isFavoriteButton.setOnClickListener {
-            onVacancieClickListener?.invoke(vacancie)
+            onFavoriteClickListener?.invoke(vacancie)
+            vacancie.isFavorite = !vacancie.isFavorite
+
             val resIdIn = if (vacancie.isFavorite) R.drawable.heart_blue
             else R.drawable.ic_favorites
             holder.isFavoriteButton.setImageResource(
@@ -41,5 +43,6 @@ class TestAdapter : ListAdapter<NetworkVacancie, TestViewHolder>(VacancieDiffCal
             )
         }
     }
+
 
 }

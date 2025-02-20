@@ -1,8 +1,8 @@
 package com.example.jobsearchapp.state
 
-import com.example.data.model.NetworkVacancie
+import com.example.data.model.IntVacancie
 
 data class ApplicationState(
-    val vacancies: List<NetworkVacancie> = emptyList(),
-    val favoriteVacancieIds: Set<Int> = setOf()
+    val vacancies: List<IntVacancie> = emptyList(),
+    val favoriteVacancieIds: Set<Int> = emptySet()
 )
