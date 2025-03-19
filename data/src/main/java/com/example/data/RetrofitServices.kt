@@ -9,4 +9,7 @@ interface RetrofitServices {
 
     @GET("vacancies")
     suspend fun getVacanciesList(): Response<List<Vacancie>>
+
+//    @GET("uc?id=1z4TbeDkbfXkvgpoJprXbN85uCcD7f00r&export=download")
+//    suspend fun getAbracadabraGDisk(): Response<Gavno>
 }

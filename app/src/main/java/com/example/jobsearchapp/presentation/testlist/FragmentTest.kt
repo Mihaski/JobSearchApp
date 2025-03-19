@@ -10,7 +10,10 @@ import com.example.jobsearchapp.MainViewModel
 import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.FragmentTestBinding
 import com.example.jobsearchapp.utils.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class FragmentTest : Fragment() {
 
     private val binding by viewBinding(FragmentTestBinding::bind)
@@ -47,15 +50,4 @@ class FragmentTest : Fragment() {
         return inflater.inflate(R.layout.fragment_test, container, false)
     }
 
-//    private fun onFavoriteIconClicked(selectedVacancieId: Int) {
-//        viewModel.viewModelScope.launch {
-//            viewModel.store.update { currentState ->
-//                val currentFavoriteIds = currentState.favoriteVacancieIds
-//                val newFavoriteIds = if (currentFavoriteIds.contains(selectedVacancieId))
-//                    currentFavoriteIds.filter { it != selectedVacancieId }.toSet()
-//                else currentFavoriteIds + setOf(selectedVacancieId)
-//                return@update currentState.copy(favoriteVacancieIds = newFavoriteIds)
-//            }
-//        }
-//    }
 }
