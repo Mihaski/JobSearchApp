@@ -8,7 +8,7 @@ data class NetworkVacancies(
     val company: String = "",
     val experience: Experience? = null,
     val publishedDate: String = "",
-    val isFavorite: Boolean = false,
+    var isFavorite: Boolean = false,
     val salary: Salary? = null,
     val schedules: List<String> = listOf(""),
     val appliedNumber: Int = 0,

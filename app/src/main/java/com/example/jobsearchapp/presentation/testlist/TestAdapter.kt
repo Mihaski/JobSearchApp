@@ -3,12 +3,12 @@ package com.example.jobsearchapp.presentation.testlist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.data.model.IntVacancie1
+import com.example.data.model.NetworkVacancies
 import com.example.jobsearchapp.R
 
-class TestAdapter : ListAdapter<IntVacancie1, TestViewHolder>(VacancieDiffCallback()) {
+class TestAdapter : ListAdapter<NetworkVacancies, TestViewHolder>(VacancieDiffCallback()) {
 
-    var onFavoriteClickListener: ((IntVacancie1) -> Unit)? = null
+    var onFavoriteClickListener: ((NetworkVacancies) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
         return TestViewHolder(
@@ -22,9 +22,9 @@ class TestAdapter : ListAdapter<IntVacancie1, TestViewHolder>(VacancieDiffCallba
         holder.tvTitle.text = vacancie.title
         holder.tvLookingNumber.text = "Сейчас просматривает ${vacancie.lookingNumber} человек"
         holder.tvCity.text =
-            "${vacancie.address.town}, ${vacancie.address.street}, ${vacancie.address.house}"
-        holder.tvSalary.text = vacancie.salary.short
-        holder.tvExpirience.text = vacancie.experience.previewText
+            "${vacancie.address?.town}, ${vacancie.address?.street}, ${vacancie.address?.house}"
+        holder.tvSalary.text = vacancie.salary?.short
+        holder.tvExpirience.text = vacancie.experience?.previewText
         holder.tvCompanyName.text = vacancie.company
         holder.tvDateOfPublication.text = vacancie.publishedDate
         val resId = if (vacancie.isFavorite) R.drawable.heart_blue

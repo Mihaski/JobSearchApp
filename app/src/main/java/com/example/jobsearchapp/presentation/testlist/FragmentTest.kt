@@ -1,7 +1,6 @@
 package com.example.jobsearchapp.presentation.testlist
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,23 +28,19 @@ class FragmentTest : Fragment() {
         listTestRV.adapter = adapterTest
 
         viewModel.store.myLiveDataObservable.observe(viewLifecycleOwner) {
-            adapterTest.submitList(it.vacancies)
+            adapterTest.submitList(it.networkData.networkVacancies)
         }
         adapterTest.onFavoriteClickListener = { netVacId ->
             viewModel.store.update { currentState ->
-                val currentIds = currentState.favoriteVacancieIds
-                val newIds = if (currentIds.contains(netVacId.id))
-                    currentIds.filter { it != netVacId.id }.toSet()
-                else currentIds + setOf(netVacId.id)
-                return@update currentState.copy(favoriteVacancieIds = newIds)
+                val current = currentState.favoriteVacancieSet
+                val new = if (current.contains(netVacId.id))
+                    current.filter { it != netVacId.id }.toSet()
+                else current + setOf(netVacId.id)
+                return@update currentState.copy(favoriteVacancieSet = new)
             }
         }
         viewModel.refreshVacancie()
 
-        viewModel.store.myLiveDataObservable.observe(viewLifecycleOwner) {
-            val message = it.networkData.toString()
-            Log.d("listNData", message)
-        }
     }
 
     override fun onCreateView(

@@ -5,6 +5,6 @@ import com.example.data.model.NetworkData
 
 data class ApplicationState(
     val vacancies: List<IntVacancie1> = emptyList(),
-    val favoriteVacancieIds: Set<Int> = emptySet(),
+    val favoriteVacancieSet: Set<String> = emptySet(),
     val networkData: NetworkData = NetworkData(arrayListOf(), arrayListOf())
 )

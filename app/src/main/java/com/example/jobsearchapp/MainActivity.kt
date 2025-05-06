@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         store.myLiveDataObservable.observe(this) {
             navView.getOrCreateBadge(R.id.fragmentFavourites).apply {
-                number = it.favoriteVacancieIds.size
-                isVisible = it.favoriteVacancieIds.isNotEmpty()
+                number = it.favoriteVacancieSet.size
+                isVisible = it.favoriteVacancieSet.isNotEmpty()
             }
         }
     }
