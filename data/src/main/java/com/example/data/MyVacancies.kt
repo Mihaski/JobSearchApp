@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Vacancie(
+data class MyVacancies(
     val id: String = "",
     val lookingNumber: String = "",
     val title: String = "",

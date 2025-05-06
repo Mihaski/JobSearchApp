@@ -1,13 +1,13 @@
 package com.example.data.model
 
-data class NetworkVacancie(
+data class IntVacancie1(
     val address: Address,
     val appliedNumber: Int,
     val company: String,
     val description: String,
     val experience: Experience,
-    val id: String,
-    val isFavorite: Boolean,
+    val id: Int,
+    var isFavorite: Boolean,
     val lookingNumber: Int,
     val publishedDate: String,
     val questions: List<String>,

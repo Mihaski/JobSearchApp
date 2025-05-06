@@ -1,13 +1,12 @@
 package com.example.data.withouthttp
 
-import com.example.data.Vacancie
 import com.example.data.model.Address
 import com.example.data.model.Experience
-import com.example.data.model.IntVacancie
+import com.example.data.model.IntVacancie1
 import com.example.data.model.Salary
 
 val listOfNetworkVacancie = listOf(
-    IntVacancie(
+    IntVacancie1(
         Address("4/5", "улица Бирюзова", "Минск"),
         147,
         "Мобирикс",
@@ -35,7 +34,7 @@ val listOfNetworkVacancie = listOf(
         listOf("полная занятость", "полный день"),
         "UI/UX дизайнер"
     ),
-    IntVacancie(
+    IntVacancie1(
         Address(
             "4/5", "улица Бирюзова", "Минск"
         ),
@@ -70,7 +69,7 @@ val listOfNetworkVacancie = listOf(
         listOf("полная занятость", "полный день"),
         "UI/UX дизайнер"
     ),
-    IntVacancie(
+    IntVacancie1(
         Address("4/5", "улица Бирюзова", "Минск"),
         147,
         "Мобирикс",
@@ -98,7 +97,7 @@ val listOfNetworkVacancie = listOf(
         listOf("полная занятость", "полный день"),
         "UI/UX дизайнер"
     ),
-    IntVacancie(
+    IntVacancie1(
         Address(
             "4/5", "улица Бирюзова", "Минск"
         ),

@@ -1,6 +1,6 @@
 package com.example.data
 
-data class Offers(
+data class MyOffers(
     var id: String = "",
     var title: String = "",
     var button: String = "",

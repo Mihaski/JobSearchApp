@@ -2,8 +2,8 @@ package com.example.jobsearchapp
 
 import androidx.core.view.isVisible
 import com.example.data.HorizontalBaseClass
-import com.example.data.Offers
-import com.example.data.Vacancie
+import com.example.data.MyOffers
+import com.example.data.MyVacancies
 import com.example.data.VerticalBaseClass
 import com.example.jobsearchapp.databinding.OffersItemBinding
 import com.example.jobsearchapp.databinding.VacanciesItemBinding
@@ -11,8 +11,8 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 object MainScreenDelegates {
 
-    fun vacanciesOneItemDelegate(itemClickedListener: (Vacancie) -> Unit) =
-        adapterDelegateViewBinding<Vacancie, VerticalBaseClass, VacanciesItemBinding>(
+    fun vacanciesOneItemDelegate(itemClickedListener: (MyVacancies) -> Unit) =
+        adapterDelegateViewBinding<MyVacancies, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
                 VacanciesItemBinding.inflate(
                     inflater,
@@ -54,8 +54,8 @@ object MainScreenDelegates {
             }
         }
 
-    val offersOneItemDelegate =
-        adapterDelegateViewBinding<Offers, HorizontalBaseClass, OffersItemBinding>(
+    val myOffersOneItemDelegate =
+        adapterDelegateViewBinding<MyOffers, HorizontalBaseClass, OffersItemBinding>(
             { inflater, container ->
                 OffersItemBinding.inflate(
                     inflater,

@@ -3,12 +3,12 @@ package com.example.jobsearchapp.presentation.testlist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.data.model.IntVacancie
+import com.example.data.model.IntVacancie1
 import com.example.jobsearchapp.R
 
-class TestAdapter : ListAdapter<IntVacancie, TestViewHolder>(VacancieDiffCallback()) {
+class TestAdapter : ListAdapter<IntVacancie1, TestViewHolder>(VacancieDiffCallback()) {
 
-    var onFavoriteClickListener: ((IntVacancie) -> Unit)? = null
+    var onFavoriteClickListener: ((IntVacancie1) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
         return TestViewHolder(

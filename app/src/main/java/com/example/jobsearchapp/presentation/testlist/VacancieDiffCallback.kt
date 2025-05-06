@@ -1,17 +1,15 @@
 package com.example.jobsearchapp.presentation.testlist
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.data.Vacancie
-import com.example.data.model.IntVacancie
-import com.example.data.model.NetworkVacancie
+import com.example.data.model.IntVacancie1
 
-class VacancieDiffCallback : DiffUtil.ItemCallback<IntVacancie>() {
+class VacancieDiffCallback : DiffUtil.ItemCallback<IntVacancie1>() {
 
-    override fun areItemsTheSame(oldItem: IntVacancie, newItem: IntVacancie): Boolean {
+    override fun areItemsTheSame(oldItem: IntVacancie1, newItem: IntVacancie1): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: IntVacancie, newItem: IntVacancie): Boolean {
+    override fun areContentsTheSame(oldItem: IntVacancie1, newItem: IntVacancie1): Boolean {
         return oldItem == newItem
     }
 }

@@ -1,6 +1,7 @@
 package com.example.jobsearchapp.presentation.testlist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +41,11 @@ class FragmentTest : Fragment() {
             }
         }
         viewModel.refreshVacancie()
+
+        viewModel.store.myLiveDataObservable.observe(viewLifecycleOwner) {
+            val message = it.networkData.toString()
+            Log.d("listNData", message)
+        }
     }
 
     override fun onCreateView(

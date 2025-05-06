@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.data.withouthttp.listOfOffers
-import com.example.jobsearchapp.MainScreenDelegates.offersOneItemDelegate
+import com.example.jobsearchapp.MainScreenDelegates.myOffersOneItemDelegate
 import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.OffersItemsListBinding
 import com.example.jobsearchapp.utils.viewBinding
@@ -17,7 +17,7 @@ class FragmentPartOfMainHorizontal : Fragment() {
     private val binding by viewBinding(OffersItemsListBinding::bind) //!! IMPORTANT only onViewCreated
 
     private val horizontalAdapter = ListDelegationAdapter(
-        offersOneItemDelegate
+        myOffersOneItemDelegate
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -19,10 +19,12 @@ class MainViewModel @Inject constructor(
     private val repository = Repository()
 
     fun refreshVacancie() = viewModelScope.launch {
+        val listNetworkData = repository.getNetworkDataRepository()
         store.update {
             it.copy(
                 vacancies = repository.getNetworkVacancies(),
-                favoriteVacancieIds = repository.getFavoriteVacancies()
+                favoriteVacancieIds = repository.getFavoriteVacancies(),
+                networkData = listNetworkData
             )
         }
     }
