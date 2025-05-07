@@ -13,6 +13,7 @@
     <color name="dark_green">#015905</color>
     <color name="blue">#2B7EFE</color>
     <color name="background">#121212</color>
+    <color name="red">#FF0000</color>
 
 
 </resources>

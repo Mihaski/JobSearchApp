@@ -45,11 +45,17 @@ class FragmentLkEnter : Fragment() {
                 viewModel.resetErrorInputEmail()
             }
 
-            override fun afterTextChanged(p0: Editable?) {}
+            override fun afterTextChanged(p0: Editable?) {
+
+
+
+            }
         })
 
         viewModel.errorInputEmail.observe(viewLifecycleOwner) {
-            binding.etEmail.error = if (it) "error" else null
+            binding.containerEmailName.error = if (it) resources.getString(
+                R.string.input_text_error_mesaga
+            ) else null
         }
     }
 
