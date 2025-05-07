@@ -112,11 +112,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:textColor="@color/red"
                 android:visibility="gone"
+                android:text="@string/errr_text_input"
+                android:textColor="@color/red"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cv_container"
-                tools:text="Какое то сообщение что некоректен ввод" />
+                app:layout_constraintTop_toBottomOf="@+id/cv_container" />
 
             <LinearLayout
                 style="?android:attr/buttonBarStyle"

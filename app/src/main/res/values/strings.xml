@@ -84,5 +84,6 @@
     <string name="title_favourites">Избранное</string>
     <string name="fragment_enter_lk_label">fragment_enter_lk</string>
     <string name="button_back_esc">кнопка стереть</string>
+    <string name="errr_text_input">Какое то сообщение что некоректен ввод</string>
 
 </resources>
