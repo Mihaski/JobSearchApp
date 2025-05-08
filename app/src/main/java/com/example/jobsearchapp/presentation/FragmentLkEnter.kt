@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -74,7 +75,10 @@ class FragmentLkEnter : Fragment() {
                     )
                 else binding.buttonContinue
                     .setBackgroundColor(
-                        ContextCompat.getColor(requireContext().applicationContext, R.color.dark_blue)
+                        ContextCompat.getColor(
+                            requireContext().applicationContext,
+                            R.color.dark_blue
+                        )
                     )
             }
 
@@ -84,11 +88,15 @@ class FragmentLkEnter : Fragment() {
         viewModel.errorInputEmail.observe(viewLifecycleOwner) {
             if (it) {
                 binding.tvErrorTextInput.isVisible = true
-                binding.containerEmailName.error = "false"
-            }
-            else {
+                binding.containerEmailName.background =
+                    ResourcesCompat.getDrawable(
+                        resources,
+                        R.drawable.background_rectangle_with_rounded_corner,
+                        null
+                    )
+            } else {
                 binding.tvErrorTextInput.isGone = true
-                binding.containerEmailName.error = null
+                binding.containerEmailName.background = null
             }
         }
     }
