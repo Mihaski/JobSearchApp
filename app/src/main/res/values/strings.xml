@@ -1,5 +1,9 @@
 <resources>
 
+    <string name="exp_text_field">Требуемый опыт: %1$s</string>
+
+    <string name="args_concat_email">Отправили код на %1$s</string>
+
     <string name="input_text_error_mesaga">Вы ввели неверный e-mail</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

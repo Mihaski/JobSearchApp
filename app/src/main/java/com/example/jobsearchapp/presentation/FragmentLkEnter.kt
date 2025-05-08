@@ -41,7 +41,11 @@ class FragmentLkEnter : Fragment() {
             viewModel.validateEmail(binding.etEmail.text.toString())
             binding.etEmail.requestFocus()
             if (viewModel.validateEmail(binding.etEmail.text.toString()))
-                findNavController().navigate(R.id.action_fragmentLkEnter_to_fragment_approved)
+                findNavController().navigate(
+                    FragmentLkEnterDirections.actionFragmentLkEnterToFragmentApproved().apply {
+                        binding.etEmail.text.toString()
+                    }
+                )
         }
 
 
@@ -56,7 +60,7 @@ class FragmentLkEnter : Fragment() {
                 && binding.etEmail.text.toString() == getString(R.string.text_EditText)
             ) binding.etEmail.setText("")
             if (!hasFocus && binding.etEmail.text.toString() == "") binding.etEmail.setText(
-                getString(R.string.text_EditText)
+                R.string.text_EditText
             )
 
         }

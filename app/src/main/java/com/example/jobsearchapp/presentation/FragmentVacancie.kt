@@ -57,7 +57,7 @@ class FragmentVacancie : Fragment() {
             }
         }
         binding.buttonAppliedVacancie.setOnClickListener {
-            findNavController().navigate(FragmentVacancieDirections.actionFragmentVacancieToFragmentDialogResponse())
+            findNavController().navigate(R.id.action_fragmentVacancie_to_fragmentDialogResponse)
         }
     }
 }

@@ -9,7 +9,6 @@ import com.example.jobsearchapp.R
 
 class FragmentMain : Fragment() {
 
-//    private val binding by viewBinding(FragmentMainBinding::bind) //!! IMPORTANT only onViewCreated
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
