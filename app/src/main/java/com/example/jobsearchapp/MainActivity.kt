@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val navController = findNavController(R.id.host_fragment_container)
         val navView = findViewById<BottomNavigationView>(R.id.nav_bar_view)
         navView.setupWithNavController(navController)
@@ -29,6 +30,15 @@ class MainActivity : AppCompatActivity() {
                 number = it.favoriteVacancieSet.size
                 isVisible = it.favoriteVacancieSet.isNotEmpty()
             }
+        }
+
+        with(navView.menu){
+            findItem(R.id.fragmentMain).isEnabled = false
+            findItem(R.id.fragmentFavourites).isEnabled = false
+            findItem(R.id.nav_button_responses).isEnabled = false
+            findItem(R.id.nav_button_messages).isEnabled = false
+            findItem(R.id.nav_button_profile).isEnabled = false
+
         }
     }
 }

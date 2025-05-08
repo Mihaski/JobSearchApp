@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -42,13 +43,21 @@ class FragmentLkEnter : Fragment() {
                 findNavController().navigate(R.id.action_fragmentLkEnter_to_fragment_approved)
         }
 
+
         binding.etEmail.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus &&
-                binding.etEmail.text.toString() == getString(R.string.text_EditText)
+
+            binding.envelopeImage.isGone = true
+            binding.buttonClearInput.isGone = false
+            binding.buttonClearInput.setOnClickListener {
+                binding.etEmail.setText("")
+            }
+            if (hasFocus
+                && binding.etEmail.text.toString() == getString(R.string.text_EditText)
             ) binding.etEmail.setText("")
             if (!hasFocus && binding.etEmail.text.toString() == "") binding.etEmail.setText(
                 getString(R.string.text_EditText)
             )
+
         }
 
         binding.etEmail.addTextChangedListener(object :
@@ -56,14 +65,31 @@ class FragmentLkEnter : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 viewModel.resetErrorInputEmail()
+
+                if (binding.etEmail.text.toString() != ""
+                    && binding.etEmail.text.toString() != getString(R.string.text_EditText)
+                ) binding.buttonContinue
+                    .setBackgroundColor(
+                        ContextCompat.getColor(requireContext().applicationContext, R.color.blue)
+                    )
+                else binding.buttonContinue
+                    .setBackgroundColor(
+                        ContextCompat.getColor(requireContext().applicationContext, R.color.dark_blue)
+                    )
             }
 
             override fun afterTextChanged(p0: Editable?) {}
         })
 
         viewModel.errorInputEmail.observe(viewLifecycleOwner) {
-            if (it) binding.tvErrorTextInput.isVisible = true
-            else binding.tvErrorTextInput.isGone = true
+            if (it) {
+                binding.tvErrorTextInput.isVisible = true
+                binding.containerEmailName.error = "false"
+            }
+            else {
+                binding.tvErrorTextInput.isGone = true
+                binding.containerEmailName.error = null
+            }
         }
     }
 

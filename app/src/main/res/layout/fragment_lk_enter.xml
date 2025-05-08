@@ -90,15 +90,16 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageButton
+                            android:id="@+id/button_clear_input"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/grey"
                             android:contentDescription="@string/button_back_esc"
+                            android:paddingHorizontal="15dp"
                             android:src="@drawable/esc_icon"
                             android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/et_email"
                             app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -112,9 +113,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:visibility="gone"
                 android:text="@string/errr_text_input"
                 android:textColor="@color/red"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cv_container" />
 
