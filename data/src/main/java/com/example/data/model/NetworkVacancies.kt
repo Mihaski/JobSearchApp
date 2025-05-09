@@ -1,5 +1,10 @@
 package com.example.data.model
 
+import android.os.Parcelable
+import com.example.data.VerticalBaseClass
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class NetworkVacancies(
     val id: String = "",
     val lookingNumber: Int = 0,
@@ -14,5 +19,5 @@ data class NetworkVacancies(
     val appliedNumber: Int = 0,
     val description: String = "",
     val responsibilities: String = "",
-    val questions: List<String> = listOf("")
-)
+    val questions: List<String> = listOf(""),
+) : VerticalBaseClass, Parcelable

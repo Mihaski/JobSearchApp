@@ -1,18 +1,19 @@
 package com.example.jobsearchapp
 
+import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.example.data.HorizontalBaseClass
 import com.example.data.MyOffers
-import com.example.data.MyVacancies
 import com.example.data.VerticalBaseClass
+import com.example.data.model.NetworkVacancies
 import com.example.jobsearchapp.databinding.OffersItemBinding
 import com.example.jobsearchapp.databinding.VacanciesItemBinding
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 object MainScreenDelegates {
 
-    fun vacanciesOneItemDelegate(itemClickedListener: (MyVacancies) -> Unit) =
-        adapterDelegateViewBinding<MyVacancies, VerticalBaseClass, VacanciesItemBinding>(
+    fun vacanciesOneItemDelegate(itemClickedListener: (NetworkVacancies) -> Unit) =
+        adapterDelegateViewBinding<NetworkVacancies, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
                 VacanciesItemBinding.inflate(
                     inflater,
@@ -25,11 +26,11 @@ object MainScreenDelegates {
                 itemClickedListener(item)
             }
             binding.buttFavoritesHeartBlueOrInactive.setOnClickListener {
-                val resId = if (item.isFavorite == "false") {
-                    item.isFavorite = "true"
+                val resId = if (!item.isFavorite) {
+                    item.isFavorite = true
                     R.drawable.heart_blue
                 } else {
-                    item.isFavorite = "false"
+                    item.isFavorite = false
                     R.drawable.ic_favorites
                 }
                 binding.buttFavoritesHeartBlueOrInactive.setImageResource(
@@ -39,14 +40,30 @@ object MainScreenDelegates {
             bind {
                 with(binding) {
                     jobTitle.text = item.title
-                    countCurrentlyViewing.text =
-                        "Сейчас просматривает ${item.lookingNumber} человек"
-                    city.text = item.town
-                    salary.text = item.salaryShort
-                    experience.text = item.previewExperienceText
+
+                    when (item.lookingNumber) {
+
+                        0 -> countCurrentlyViewing.isGone = true
+                        1 -> countCurrentlyViewing.text =
+                            getString(R.string.count_currently_viewing_text_1, item.lookingNumber)
+
+                        2, 3, 4 -> countCurrentlyViewing.text = getString(
+                            R.string.count_currently_viewing_text_2_3_4,
+                            item.lookingNumber
+                        )
+
+                        else -> countCurrentlyViewing.text = getString(
+                            R.string.count_currently_viewing_text_all_the_rest,
+                            item.lookingNumber
+                        )
+                    }
+
+                    city.text = item.address?.town
+                    salary.text = item.salary?.short
+                    experience.text = item.experience?.previewText
                     companyName.text = item.company
                     dateOfPublication.text = item.publishedDate
-                    if (item.isFavorite == "true")
+                    if (item.isFavorite)
                         buttFavoritesHeartBlueOrInactive.setImageResource(
                             R.drawable.heart_blue
                         )

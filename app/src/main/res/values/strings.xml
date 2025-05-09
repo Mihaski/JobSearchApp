@@ -1,10 +1,23 @@
 <resources>
 
+    <string name="tv_street">%1$s, %2$s, %3$s</string>
+
+    <string name="tv_responded_count_1">%1$d человек уже откликнулся</string>
+    <string name="tv_responded_count_2_3_4">%1$d человека уже откликнулись</string>
+    <string name="tv_responded_count_all_the_rest">%1$d человек уже откликнулись</string>
+
+    <string name="tv_looking_number_1">%1$d человек сейчас смотрит</string>
+    <string name="tv_looking_number_2_3_4">%1$d человека сейчас смотрят</string>
+    <string name="tv_looking_number_all_the_rest">%1$d человек сейчас смотрят</string>
+
+    <string name="count_currently_viewing_text_1">Сейчас просматривает %1$s человек</string>
+    <string name="count_currently_viewing_text_2_3_4">Сейчас просматривают %1$s человека</string>
+    <string name="count_currently_viewing_text_all_the_rest">Сейчас просматривают %1$s человека</string>
+
     <string name="exp_text_field">Требуемый опыт: %1$s</string>
-
     <string name="args_concat_email">Отправили код на %1$s</string>
-
     <string name="input_text_error_mesaga">Вы ввели неверный e-mail</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

@@ -34,28 +34,42 @@ class FragmentVacancie : Fragment() {
         with(args.vacancies) {
             binding.apply {
                 tvTitle.text = title
-                tvSalaryFull.text = salaryFull
-                experience.text = "Требуемый опыт: ${experienceText}"
-                tvSchedules.text = schedules
-                if (appliedNumber == "") containerRespondedCount.isGone = true else
-                    if (appliedNumber == "2" || appliedNumber == "3" || appliedNumber == "4")
-                        tvRespondedCount.text = "${appliedNumber} человека уже откликнулись"
-                    else tvRespondedCount.text = "${appliedNumber} человек уже откликнулись"
+                tvSalaryFull.text = salary?.full
+                experience.text = getString(R.string.exp_text_field, experience)
+                tvSchedules.text = schedules.toString()
 
-                when (lookingNumber) {
-                    "" -> containerLookingNumber.isGone = true
-                    "2" -> tvLookingNumber.text = "${lookingNumber} человека сейчас смотрят"
-                    "3" -> tvLookingNumber.text = "${lookingNumber} человека сейчас смотрят"
-                    "4" -> tvLookingNumber.text = "${lookingNumber} человека сейчас смотрят"
-                    else -> tvLookingNumber.text = "${lookingNumber} человек сейчас смотрят"
+                when (appliedNumber) {
+                    0 -> containerRespondedCount.isGone = true
+                    1 -> tvRespondedCount.text =
+                        getString(R.string.tv_responded_count_1, appliedNumber)
+
+                    2, 3, 4 -> tvRespondedCount.text =
+                        getString(R.string.tv_responded_count_2_3_4, appliedNumber)
+
+                    else -> tvRespondedCount.text =
+                        getString(R.string.tv_responded_count_all_the_rest, appliedNumber)
                 }
+                when (lookingNumber) {
+                    0 -> containerLookingNumber.isGone = true
+                    1 -> tvLookingNumber.text =
+                        getString(R.string.tv_looking_number_1, lookingNumber)
+
+                    2, 3, 4 -> tvLookingNumber.text =
+                        getString(R.string.tv_looking_number_2_3_4, lookingNumber)
+
+                    else -> tvLookingNumber.text =
+                        getString(R.string.tv_looking_number_all_the_rest, lookingNumber)
+                }
+
                 tvCompanyName.text = company
-                tvStreet.text = "$town, $street, $house"
+                tvStreet.text =
+                    getString(R.string.tv_street, address?.town, address?.street, address?.house)
                 tvFieldDescription.text = description
                 tvFieldResponsibilities.text = responsibilities
-                tvArrayQuestions1.text = questions
+                tvArrayQuestions1.text = questions.toString()
             }
         }
+
         binding.buttonAppliedVacancie.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentVacancie_to_fragmentDialogResponse)
         }
