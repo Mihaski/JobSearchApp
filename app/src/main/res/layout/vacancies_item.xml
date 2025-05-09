@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:textSize="20sp"
-                tools:text="@string/tv_verticals_card"/>
+                tools:text="@string/tv_verticals_card" />
 
             <TextView
                 android:id="@+id/city"
@@ -59,52 +59,27 @@
                 android:textSize="14sp"
                 tools:text="@string/tv_verticals_card" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/company_name"
+                    android:drawablePadding="5dp"
                     style="@style/style_sf_pro_bold_white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:textSize="14sp"
+                    app:drawableEndCompat="@drawable/icon_ok"
                     tools:text="@string/tv_verticals_card" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/image_approved"
-                    android:src="@drawable/icon_ok" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/experience"
+                style="@style/style_sf_pro_bold_white"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/image_approved"
-                    android:src="@drawable/bag_mzf" />
-
-                <TextView
-                    android:id="@+id/experience"
-                    style="@style/style_sf_pro_bold_white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:textSize="14sp"
-                    tools:text="@string/tv_verticals_card" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawablePadding="5dp"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/bag_mzf"
+                tools:text="@string/tv_verticals_card" />
 
             <TextView
                 android:id="@+id/date_of_publication"
