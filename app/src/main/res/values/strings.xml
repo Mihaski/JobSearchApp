@@ -1,5 +1,8 @@
 <resources>
 
+
+    <string name="tv_count_favourites_title">%1$s Вакансия</string>
+
     <string name="tv_street">%1$s, %2$s, %3$s</string>
 
     <string name="tv_responded_count_1">%1$d человек уже откликнулся</string>

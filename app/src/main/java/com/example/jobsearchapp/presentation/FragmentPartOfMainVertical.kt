@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.jobsearchapp.MainScreenDelegates.vacanciesOneItemDelegate
 import com.example.jobsearchapp.MainViewModel
@@ -21,7 +21,7 @@ class FragmentPartOfMainVertical : Fragment() {
     //!! IMPORTANT only onViewCreated
     private val binding by viewBinding(VacanciesItemsListBinding::bind)
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     private val verticalAdapter = ListDelegationAdapter(
         vacanciesOneItemDelegate {
@@ -35,6 +35,8 @@ class FragmentPartOfMainVertical : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.resetNavViewIsEnable()
+
         binding.rvVerticalContainerItemsListWithoutScreen.adapter = verticalAdapter
 
         viewModel.store.myLiveDataObservable.observe(viewLifecycleOwner) {
