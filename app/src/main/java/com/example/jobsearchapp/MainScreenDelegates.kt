@@ -12,7 +12,10 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 object MainScreenDelegates {
 
-    fun vacanciesOneItemDelegate(itemClickedListener: (NetworkVacancies) -> Unit) =
+    fun vacanciesOneItemDelegate(
+        itemClickedListener: (NetworkVacancies) -> Unit,
+        buttonClickedListener: (NetworkVacancies) -> Unit,
+    ) =
         adapterDelegateViewBinding<NetworkVacancies, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
                 VacanciesItemBinding.inflate(
@@ -24,6 +27,9 @@ object MainScreenDelegates {
         ) {
             binding.root.setOnClickListener {
                 itemClickedListener(item)
+            }
+            binding.buttCallsToVacancies.setOnClickListener {
+                buttonClickedListener(item)
             }
             binding.buttFavoritesHeartBlueOrInactive.setOnClickListener {
                 val resId = if (!item.isFavorite) {

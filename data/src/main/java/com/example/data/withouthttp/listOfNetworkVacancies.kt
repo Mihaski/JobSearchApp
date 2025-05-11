@@ -2,7 +2,7 @@ package com.example.data.withouthttp
 
 import com.example.data.model.Address
 import com.example.data.model.Experience
-import com.example.data.model.IntVacancie1
+import com.example.data.IntVacancie1
 import com.example.data.model.Salary
 
 val listOfNetworkVacancie = listOf(

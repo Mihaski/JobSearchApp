@@ -24,19 +24,24 @@ class FragmentPartOfMainVertical : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
 
     private val verticalAdapter = ListDelegationAdapter(
-        vacanciesOneItemDelegate {
+        vacanciesOneItemDelegate({
             findNavController().navigate(
                 FragmentMainDirections.actionFragmentMainToFragmentVacancie(
                     it
                 )
             )
-        }
+        }, {
+            findNavController().navigate(
+                FragmentMainDirections.actionFragmentMainToFragmentDialogResponse(
+
+                )
+            )
+        })
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.resetNavViewIsEnable()
-
         binding.rvVerticalContainerItemsListWithoutScreen.adapter = verticalAdapter
 
         viewModel.store.myLiveDataObservable.observe(viewLifecycleOwner) {

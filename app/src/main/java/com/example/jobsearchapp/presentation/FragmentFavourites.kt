@@ -23,13 +23,20 @@ class FragmentFavourites : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
 
     private val verticalAdapter = ListDelegationAdapter(
-        vacanciesOneItemDelegate {
-            findNavController().navigate(
-                FragmentFavouritesDirections.actionFragmentFavouritesToFragmentVacancie(
-                    it
+        vacanciesOneItemDelegate(
+            {
+                findNavController().navigate(
+                    FragmentFavouritesDirections.actionFragmentFavouritesToFragmentVacancie(
+                        it
+                    )
                 )
-            )
-        }
+            }, {
+                findNavController().navigate(
+                    FragmentFavouritesDirections.actionFragmentFavouritesToFragmentDialogResponse(
+
+                    )
+                )
+            })
     )
 
     override fun onCreateView(

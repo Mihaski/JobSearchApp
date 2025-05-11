@@ -1,4 +1,8 @@
-package com.example.data.model
+package com.example.data
+
+import com.example.data.model.Address
+import com.example.data.model.Experience
+import com.example.data.model.Salary
 
 data class IntVacancie1(
     val address: Address,

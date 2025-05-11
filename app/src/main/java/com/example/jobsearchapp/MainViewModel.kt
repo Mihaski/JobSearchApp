@@ -1,6 +1,5 @@
 package com.example.jobsearchapp
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -59,7 +58,6 @@ class MainViewModel @Inject constructor(
         get() = _navViewIsEnabled
 
     fun resetNavViewIsEnable() {
-        Log.d("TUT_GOVN", "enter reset method")
         _navViewIsEnabled.value = true
     }
 

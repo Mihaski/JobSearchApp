@@ -1,6 +1,6 @@
 package com.example.jobsearchapp.state
 
-import com.example.data.model.IntVacancie1
+import com.example.data.IntVacancie1
 import com.example.data.model.NetworkData
 
 data class ApplicationState(
