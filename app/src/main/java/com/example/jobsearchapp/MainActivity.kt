@@ -35,18 +35,18 @@ class MainActivity : AppCompatActivity() {
                 with(navView.menu) {
                     findItem(R.id.fragmentMain).isEnabled = false
                     findItem(R.id.fragmentFavourites).isEnabled = false
-                    findItem(R.id.nav_button_responses).isEnabled = false
-                    findItem(R.id.nav_button_messages).isEnabled = false
-                    findItem(R.id.nav_button_profile).isEnabled = false
+                    findItem(R.id.fragmentResponses).isEnabled = false
+                    findItem(R.id.fragmentMessage).isEnabled = false
+                    findItem(R.id.fragmentProfile).isEnabled = false
                 }
 
             } else {
                 with(navView.menu) {
                     findItem(R.id.fragmentMain).isEnabled = true
                     findItem(R.id.fragmentFavourites).isEnabled = true
-                    findItem(R.id.nav_button_responses).isEnabled = true
-                    findItem(R.id.nav_button_messages).isEnabled = true
-                    findItem(R.id.nav_button_profile).isEnabled = true
+                    findItem(R.id.fragmentResponses).isEnabled = true
+                    findItem(R.id.fragmentMessage).isEnabled = true
+                    findItem(R.id.fragmentProfile).isEnabled = true
                 }
             }
 

@@ -106,4 +106,8 @@
     <string name="button_back_esc">кнопка стереть</string>
     <string name="errr_text_input">Какое то сообщение что некоректен ввод</string>
 
+    <string name="fragment_response_name">fragment responses</string>
+    <string name="fragment_message_name">fragment message</string>
+    <string name="fragment_profile_name">fragment profile</string>
+
 </resources>

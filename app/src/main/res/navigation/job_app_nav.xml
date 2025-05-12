@@ -25,8 +25,7 @@
             app:destination="@id/fragmentMain" />
         <argument
             android:name="emailFromLkEnter"
-            app:argType="string"
-            android:defaultValue="hui" />
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -65,7 +64,7 @@
         android:id="@+id/fragmentFavourites"
         android:name="com.example.jobsearchapp.presentation.FragmentFavourites"
         android:label="FragmentFavourites"
-        tools:layout="@layout/fragment_favourites" >
+        tools:layout="@layout/fragment_favourites">
         <action
             android:id="@+id/action_fragmentFavourites_to_fragmentVacancie"
             app:destination="@id/fragmentVacancie" />
@@ -77,4 +76,19 @@
         android:id="@+id/fragmentTest"
         android:name="com.example.jobsearchapp.presentation.testlist.FragmentTest"
         android:label="FragmentTest" />
+    <fragment
+        android:id="@+id/fragmentResponses"
+        android:name="com.example.jobsearchapp.presentation.FragmentResponses"
+        android:label="fragment_responses"
+        tools:layout="@layout/fragment_responses" />
+    <fragment
+        android:id="@+id/fragmentMessage"
+        android:name="com.example.jobsearchapp.presentation.FragmentMessage"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.jobsearchapp.presentation.FragmentProfile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

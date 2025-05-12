@@ -42,9 +42,9 @@ class FragmentLkEnter : Fragment() {
             binding.etEmail.requestFocus()
             if (viewModel.validateEmail(binding.etEmail.text.toString()))
                 findNavController().navigate(
-                    FragmentLkEnterDirections.actionFragmentLkEnterToFragmentApproved().apply {
+                    FragmentLkEnterDirections.actionFragmentLkEnterToFragmentApproved(
                         binding.etEmail.text.toString()
-                    }
+                    )
                 )
         }
 
