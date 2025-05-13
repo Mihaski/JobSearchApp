@@ -15,6 +15,7 @@ object MainScreenDelegates {
     fun vacanciesOneItemDelegate(
         itemClickedListener: (NetworkVacancies) -> Unit,
         buttonClickedListener: (NetworkVacancies) -> Unit,
+        heartButtonClicked:(NetworkVacancies) -> Unit,
     ) =
         adapterDelegateViewBinding<NetworkVacancies, VerticalBaseClass, VacanciesItemBinding>(
             { inflater, container ->
@@ -42,6 +43,7 @@ object MainScreenDelegates {
                 binding.buttFavoritesHeartBlueOrInactive.setImageResource(
                     resId
                 )
+                heartButtonClicked(item)
             }
             bind {
                 with(binding) {

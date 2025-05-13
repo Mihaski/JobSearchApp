@@ -39,7 +39,7 @@ class FragmentTest : Fragment() {
                 return@update currentState.copy(favoriteVacancieSet = new)
             }
         }
-        viewModel.refreshVacancie()
+        viewModel.refreshDataFromApi()
 
     }
 
