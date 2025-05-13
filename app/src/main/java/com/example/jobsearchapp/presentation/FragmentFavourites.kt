@@ -11,6 +11,7 @@ import com.example.jobsearchapp.MainScreenDelegates.vacanciesOneItemDelegate
 import com.example.jobsearchapp.MainViewModel
 import com.example.jobsearchapp.R
 import com.example.jobsearchapp.databinding.FragmentFavouritesBinding
+import com.example.jobsearchapp.utils.favoritesUpdateLambdaMainViewModel
 import com.example.jobsearchapp.utils.viewBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +37,8 @@ class FragmentFavourites : Fragment() {
 
                     )
                 )
+            }, { netVacId ->
+                favoritesUpdateLambdaMainViewModel(viewModel, netVacId)
             })
     )
 
